@@ -1,3 +1,4 @@
+@import url(https://db.onlinewebfonts.com/c/1dc8ecd8056a5ea7aa7de1db42b5b639?family=Gilroy-Regular);
 @import url(https://db.onlinewebfonts.com/c/040a78b437acd0433612f92e61d04a1b?family=Gilroy-Medium);
 @tailwind base;
 @tailwind components;
@@ -5,8 +6,40 @@
 
 
 *{
-    font-family: "Gilroy-Medium";
+    font-family: "Gilroy-Regular";
 }
 body{
     background: #010104;
+}
+.seven{
+    font-family: "Gilroy-Medium";
+}
+/* Zoom & opacity animation for active slide */
+/* All slides smaller & faded */
+.works-swiper .swiper-slide {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transform: scale(0.85);
+  opacity: 0.6;
+
+}
+
+/* Center slide zoom */
+.works-swiper .swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Optional: Slight zoom for next & prev slides for smooth effect */
+.works-swiper .swiper-slide-next,
+.works-swiper .swiper-slide-prev {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+.my-swiper-wrapper .swiper {
+  display: flex; /* override Swiper's display if needed */
+  overflow: visible; /* show overflowed slides */
+  padding: 20px; 
+  margin: 0 auto;
 }

@@ -19,7 +19,7 @@ export default function AboutSection() {
             className=" opacity-80 group-hover:opacity-100 transition duration-500 w-full max-w-md object-cover"
           />
           <div className="absolute inset-0 flex flex-col -ml-20 -mt-6 justify-center items-center text-6xl font-extrabold bg-trasparent rounded-2xl">
-            <span className="md:text-[300px] text-[250px] font-extrabold bg-gradient-to-tr from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent">
+            <span className="md:text-[300px] text-[250px] font-extrabold bg-gradient-to-tr from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent seven">
             7+
             </span>
             <span className="text-4xl font-bold bg-gradient-to-r from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent">
