@@ -1,0 +1,12 @@
+@import url(https://db.onlinewebfonts.com/c/040a78b437acd0433612f92e61d04a1b?family=Gilroy-Medium);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    font-family: "Gilroy-Medium";
+}
+body{
+    background: #010104;
+}
