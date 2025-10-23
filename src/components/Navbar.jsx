@@ -22,7 +22,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="flex items-center justify-between px-6 pt-3 bg-transparent absolute w-full z-50">
+    <nav className="flex items-center justify-between px-6 pt-3 w-full">
       {/* Left: Logo */}
       <div className="flex items-center">
         <img
