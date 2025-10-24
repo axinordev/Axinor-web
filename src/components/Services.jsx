@@ -53,7 +53,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="relative w-full bg-transparent text-white py-20 px-6 md:px-6">
+    <section className="relative w-full bg-transparent text-white py-24 px-6 md:px-6" id="services">
       <div className="text-center mb-12">
         <p className="text-[#194EFF] uppercase tracking-wide text-xl font-medium">Services</p>
         <h2 className="text-3xl md:text-4xl font-bold mt-4  leading-snug tracking-wide">We Are Digital Agency</h2>

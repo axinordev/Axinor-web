@@ -42,7 +42,7 @@ export default function Works() {
             breakpoints={{
               640: { slidesPerView: 1.5, spaceBetween: 20 }, // small tablets
               768: { slidesPerView: 2, spaceBetween: 25 }, // tablets
-              1024: { slidesPerView: 3, spaceBetween: 30 }, // desktop
+              1024: { slidesPerView: 3, spaceBetween: 10 }, // desktop
             }}
             navigation={{
               nextEl: ".swiper-button-next",
@@ -65,7 +65,7 @@ export default function Works() {
                   <img
                     src={work.image}
                     alt={work.title}
-                    className="w-full h-60 md:h-64 lg:h-72 object-cover rounded-3xl"
+                    className="w-full h-60 md:h-64 lg:h-72 object-cover rounded-3xl p-2"
                   />
                   <div className="p-4 md:p-6 text-left">
                     <h3 className="text-lg md:text-xl font-gilroy-bold mb-2">{work.title}</h3>
