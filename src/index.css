@@ -43,3 +43,18 @@ body{
   padding: 20px; 
   margin: 0 auto;
 }
+@keyframes moveMoon {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(80vw, 60vh) rotate(180deg);
+  }
+  100% {
+    transform: translate(100vw, 100vh) rotate(360deg);
+  }
+}
+
+.animate-moveMoon {
+  animation: moveMoon 20s linear infinite;
+}

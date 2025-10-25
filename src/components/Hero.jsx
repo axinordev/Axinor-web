@@ -2,41 +2,41 @@ import React from "react";
 import bgImage from "../assets/hero.jpg";
 import { ArrowRight } from "lucide-react";
 import overlayImage from "../assets/overlay.jpg";
-import overlayImage2 from "../assets/overlay.png";
+// import overlayImage2 from "../assets/overlay.png";
 
 export default function Hero() {
   return (
-    <section className="relative w-full md:h-screen h-full flex flex-col items-center justify-center text-center text-white overflow-hidden pb-10">
+    <section className="relative w-full md:h-screen h-full flex flex-col items-center justify-center text-center bg-transparent text-white overflow-hidden pb-10">
       
       {/* Background Image */}
-      <img
+      {/* <img
         src={bgImage}
         alt="Background"
         className="absolute inset-0 w-full md:w-[80%] h-full object-cover object-top md:ml-32"
-      />
+      /> */}
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent"></div> */}
 
       {/* Overlay Images */}
-      <img
+      {/* <img
         src={overlayImage}
         alt="Overlay Texture"
         className="absolute inset-0 w-[300%] md:w-[500%] h-[170%] object-fill object-top -top-5 md:-left-28 opacity-30 mix-blend-overlay"
-      />
+      /> */}
       {/* <img
         src={overlayImage}
         alt="Overlay Texture"
         className=" absolute inset-0 w-[300%] md:w-[500%] h-[170%] object-fill object-top -top-10  md:-left-52 rotate-360 opacity-20 mix-blend-overlay"
       /> */}
-      <img
+      {/* <img
         src={overlayImage2}
         alt="Overlay Texture"
         className="hidden md:block absolute inset-0 w-[300%] md:w-[500%] h-[170%] object-fill object-top -top-10 -left-36 md:-left-52 rotate-360 opacity-20 mix-blend-overlay"
-      />
+      /> */}
 
       {/* Hero Content */}
-      <div className="relative z-10 px-6 md:px-0 bg-transparent mt-36 md:mt-64">
+      <div className="relative z-10 px-6 md:px-0 bg-transparent mt-36 md:mt-40">
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold drop-shadow-lg tracking-wide">
           <span className="block md:leading-[90px] leading-[40px]">Small Details Make</span>
           <span className="block md:leading-[90px] leading-[40px]">A Big Impression</span>

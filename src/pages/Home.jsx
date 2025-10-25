@@ -8,6 +8,10 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Works from "../components/Works";
 
+// Images
+import bgImage from "../assets/hero.jpg";
+import overlayImage from "../assets/overlay.jpg";
+
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -18,17 +22,32 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative pt-20">
-      {/* 👇 This wrapper controls the navbar background */}
+    <div className="relative pt-20 overflow-x-hidden">
+      {/* Navbar */}
       <div
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-    scrolled
-      ? "bg-[#010512D9] backdrop-blur-md shadow-md"
-      : "bg-transparent backdrop-blur-0"
-  }`}
+          scrolled
+            ? "bg-[#010512D9] backdrop-blur-md shadow-md"
+            : "bg-transparent backdrop-blur-0"
+        }`}
       >
         <Navbar />
       </div>
+
+      {/* 👇 Background + Overlay spanning Hero + About */}
+      <img
+        src={bgImage}
+        alt="Background"
+        className="absolute top-0 left-0 w-full object-contain z-0 object-top"
+        style={{ height: "170vh" }} // covers Hero + About
+      />
+       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent md:h-1/5 h-1/6"></div>
+      <img
+        src={overlayImage}
+        alt="Overlay"
+        className="absolute top-0 left-0 w-full md:w-[500%] object-fill z-0 opacity-30 mix-blend-overlay pointer-events-none"
+        style={{ height: "190vh" }} // covers Hero + About
+      />
 
       {/* Page sections */}
       <Hero />
