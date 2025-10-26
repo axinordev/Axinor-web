@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.svg";
 import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
 
-export default function Navbar() {
+export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const navigate = useNavigate(); // ✅ Initialize navigation

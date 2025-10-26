@@ -8,7 +8,8 @@ import ui from "../assets/icons/ui.svg";
 import ml from "../assets/icons/ml.svg";
 import block from "../assets/icons/block.svg";
 import soft from "../assets/icons/soft.svg";
-import moonImage from "../assets/overlay.png"; // <-- moon image
+import moonImage from "../assets/overlay.png";
+import bImg from '../assets/about-bottom.png'
 
 const services = [
   { image:web, title: "Website Design & Development", desc: "We create fast, secure, and scalable websites that combine design with seamless user experiences, helping your business stand out and succeed online." },
@@ -64,13 +65,21 @@ export default function Services() {
     >
       {/* Moon moving based on scroll */}
       <img src={moonImage} alt="Moon" style={moonStyle} />
+      <img
+      src={bImg} // you can replace this with any other image (e.g., another overlay or texture)
+      alt="Bottom Decoration"
+      className="absolute md:-bottom-20 bottom-0 left-0 w-[200%] md:w-[95%] object-contain pointer-events-none z-0"
+      style={{
+        transform: "translate(-40%, 60%) rotate(180deg)", // makes it look partially outside the section
+      }}
+    />
 
       <div className="text-center mb-12">
         <p className="text-[#194EFF] uppercase tracking-wide text-xl font-medium">Services</p>
         <h2 className="text-3xl md:text-4xl font-bold mt-4  leading-snug tracking-wide">We Are Digital Agency</h2>
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+      <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto">
         {services.map((service, index) => (
           <div
             key={index}
@@ -83,8 +92,11 @@ export default function Services() {
               className="absolute inset-0 w-full h-full object-cover opacity-20"
             />
             <div className="relative z-10">
+              <div className="flex flex-row">
+              <div className="w-1.5 h-[52px] rounded-full bg-[#3564ff] top-16 mt-4 -left-20 -ml-3 overflow-visible"></div>
               <div className="bg-white rounded-[12px] flex items-center justify-center w-14 h-14 m-3 mb-4 shadow-lg">
                 <img src={service.image} alt="icon" className="w-10 h-10 object-contain" />
+              </div>
               </div>
               <h3 className="text-[24px] font-semibold mb-3 m-2 tracking-wider px-2">{service.title}</h3>
               <p className="text-gray-300 text-lg leading-relaxed m-2 font-thin">{service.desc}</p>

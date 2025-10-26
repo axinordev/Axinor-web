@@ -4,6 +4,7 @@ import topBg from "../assets/bg_career.png";
 import bottomBg from "../assets/overlay.jpg";
 import Footer from "../components/Footer";
 import serviceImg from "../assets/service.jpg";
+import Nav from "../components/Nav";
 
 const activeJobs = [
   { title: "UI/UX Designer", desc: "Lorem ipsum dolor sit amet consectetur. At gravida urna purus massa in. Quam egestas justo cras egestas diam lobortis. Auctor dui suspendisse turpis integer. Orci commodo duis nisl integer vestibulum sit. Turpis leo volutpat mauris suspendisse risus." },
@@ -58,7 +59,7 @@ const Careers = () => {
             : "bg-[#010512D9] backdrop-blur-0"
         }`}
       >
-        <Navbar />
+        <Nav />
       </div>
 
       {/* Backgrounds */}

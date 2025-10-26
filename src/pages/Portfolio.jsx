@@ -11,6 +11,7 @@ import img3 from "../assets/card.jpg";
 import img4 from "../assets/card.jpg";
 import img5 from "../assets/card.jpg";
 import img6 from "../assets/card.jpg";
+import Nav from "../components/Nav";
 
 const projects = [
   {
@@ -64,7 +65,7 @@ const Portfolio = () => {
             : "bg-[#010512D9] backdrop-blur-0"
         }`}
       >
-        <Navbar />
+        <Nav />
       </div>
 
       {/* Backgrounds */}

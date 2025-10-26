@@ -11,6 +11,7 @@ import Works from "../components/Works";
 // Images
 import bgImage from "../assets/hero.jpg";
 import overlayImage from "../assets/overlay.jpg";
+import serviceBg from "../assets/bg.png"; // ✅ your background for Services + Products
 
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -39,21 +40,39 @@ const Home = () => {
         src={bgImage}
         alt="Background"
         className="absolute top-0 left-0 w-full object-contain z-0 object-top"
-        style={{ height: "170vh" }} // covers Hero + About
+        style={{ height: "170vh" }}
       />
-       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent md:h-1/5 h-1/6"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent md:h-1/5 h-1/6"></div>
       <img
         src={overlayImage}
         alt="Overlay"
         className="absolute top-0 left-0 w-full md:w-[500%] object-fill z-0 opacity-30 mix-blend-overlay pointer-events-none"
-        style={{ height: "190vh" }} // covers Hero + About
+        style={{ height: "190vh" }}
       />
 
-      {/* Page sections */}
+      {/* Page Sections */}
       <Hero />
       <AboutSection />
-      <Services />
-      <Products />
+
+      {/* ✅ Combined Background for Services + Products */}
+      <section className="relative w-full z-0 overflow-hidden">
+        {/* Background Image for Services + Products */}
+        <img
+          src={serviceBg}
+          alt="Services and Products Background"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 z-0 top-1/3 overflow-hidden"
+        />
+        {/* Optional overlay for smooth blending */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#00041F]/40 to-transparent z-0 top-1/3"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-[#00041F]/40 to-transparent z-0 bottom-0"></div>
+
+        {/* Actual Sections */}
+        <div className="relative z-10">
+          <Services />
+          <Products />
+        </div>
+      </section>
+
       <Works />
       <Contact />
       <Footer />

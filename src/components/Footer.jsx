@@ -20,7 +20,7 @@ export default function Footer() {
           <img
             src={logo}
             alt="AXINOR Technologies"
-            className="w-36 md:w-64 h-auto object-contain mb-4 -ml-4"
+            className="w-64 h-auto object-contain mb-4 -ml-4"
           />
           <p className="text-base text-white leading-relaxed px-2">
             AXINOR blends creativity, strategy, and technology to craft impactful
@@ -31,7 +31,7 @@ export default function Footer() {
         {/* Middle Section - Important Links */}
         <div className="grid grid-cols-2 gap-x-6">
           <div className="col-span-2">
-            <h3 className="font-semibold  text-white text-xl tracking-wider">
+            <h3 className="font-semibold  text-white text-xl tracking-wider mb-8 md:mb-4 ">
               Important Links
             </h3>
           </div>
@@ -96,7 +96,7 @@ export default function Footer() {
       {/* Bottom Section - Copyright */}
       <div className="text-center mt-6 text-base text-gray-200">
         Copyright ©2025 All rights reserved |{" "}
-        <span className="font-medium">AXINOR Technologies</span>
+        <span className="font-medium">AXINOR TECHNOLOGIES</span>
       </div>
     </footer>
   );

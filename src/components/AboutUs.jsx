@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import aboutImage from "../assets/about2.png";
+import aboutImage from "../assets/seven.png";
 import moonImage from "../assets/moon.png";
 import decorativeImage from "../assets/about-bottom.png";
 
@@ -28,8 +28,8 @@ export default function AboutSection() {
   }, []);
 
   const moonStyle = {
-    transform: `translate(${scrollProgress * 90}vw, ${scrollProgress * 50}vh) rotate(${scrollProgress * 360}deg)`,
-    opacity: Math.min(scrollProgress * 0.5, 0.5), // gradually increase opacity up to 0.5
+    transform: `translate(${scrollProgress * 90}vw, ${scrollProgress * 40}vh) rotate(${scrollProgress * 360}deg)`,
+    opacity: Math.min(scrollProgress * 0.9, 0.7),
   };
 
   return (
@@ -42,7 +42,7 @@ export default function AboutSection() {
       <img
         src={moonImage}
         alt="Moon"
-        className="absolute md:w-[34%] w-full pointer-events-none z-0 -mt-6 -ml-5"
+        className="absolute md:w-[34%] w-[67%] pointer-events-none z-0 mt-10 -ml-5 overflow-hidden"
         style={moonStyle}
       />
 
@@ -50,7 +50,7 @@ export default function AboutSection() {
       <img
         src={decorativeImage}
         alt="Decorative"
-        className="absolute -bottom-56 right-0 w-[75%] pointer-events-none z-0 opacity-70 rotate-1 "
+        className="absolute -bottom-56 right-0 w-[75%] pointer-events-none z-0  rotate-1 overflow-hidden"
         style={{
           transform: "translate(55%, 0%)",
         }}
@@ -70,10 +70,10 @@ export default function AboutSection() {
             className="opacity-80 group-hover:opacity-100 transition duration-500 w-full max-w-lg object-cover"
           />
           <div className="absolute inset-0 flex flex-col -ml-20 -mt-6 justify-center items-center text-6xl font-extrabold bg-transparent rounded-2xl">
-            <span className="md:text-[350px] text-[250px] font-extrabold bg-gradient-to-tr from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent seven">
+            <span className="md:text-[350px] text-[230px] pt-1 ml-2 font-extrabold bg-gradient-to-tr from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent seven">
               7+
             </span>
-            <span className="text-4xl font-bold bg-gradient-to-r from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent">
+            <span className="md:text-4xl text-3xl ml-3 mb-1 font-bold bg-gradient-to-r from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent">
               Years Experience
             </span>
           </div>

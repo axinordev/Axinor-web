@@ -8,15 +8,18 @@ import { ArrowRight } from "lucide-react";
 export default function Contact() {
   return (
     <section 
-    className="w-full bg-transparent text-white flex flex-col items-center py-16 px-6"
+    className="w-full bg-transparent text-white flex flex-col items-center py-16 px-6 "
     style={{
         backgroundImage:`url(${bgImg})`,
+
     }}
+    id="contact"
     >
+      
       {/* Heading */}
       <div className="text-center mb-10">
-        <p className="text-[#194EFF] text-lg font-medium mb-2">CONTACT US</p>
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-wide">We’re Here to Help</h2>
+        <p className="text-[#194EFF] text-lg font-medium mb-6 mt-10">CONTACT US</p>
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-wide mb-10">We’re Here to Help</h2>
       </div>
 
       {/* Form + Map */}
@@ -82,7 +85,7 @@ export default function Contact() {
 
       {/* Contact Info */}
       <div className="mt-10 w-full max-w-5xl flex flex-col md:flex-row justify-between items-center bg-[#0B112A] p-4 rounded-xl">
-        <div className="flex items-center gap-3 border border-r-[#001FD8] border-transparent px-8">
+        <div className="flex items-center gap-3 md:border md:border-r-[#001FD8] border-transparent px-8">
           <img src={phoneIcon} alt="Phone" className="" />
           <div>
             <p className="font-medium text-[#194EFF] text-xl">Call</p>
@@ -91,7 +94,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 border border-r-[#001FD8] border-transparent px-8">
+        <div className="flex items-center gap-3 md:border md:border-r-[#001FD8] border-transparent px-8">
           <img src={emailIcon} alt="Email" className="" />
           <div>
             <p className="font-medium text-[#194EFF] text-xl mt-1">Email</p>

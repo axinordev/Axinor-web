@@ -5,17 +5,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 
-import work1 from "../assets/card.jpg";
-import work2 from "../assets/card.jpg";
+import work1 from "../assets/card3.png";
+import work2 from "../assets/card2.png";
 import work3 from "../assets/card.jpg";
-import work4 from "../assets/card.jpg";
+import work4 from "../assets/card4.png";
+import work5 from "../assets/card5.png";
 
 const works = [
-  { image: work1, title: "Insurva | Web App", description: "Lorem ipsum dolor sit amet." },
-  { image: work2, title: "Insurva | AI Bot", description: "Ut arcu nunc nulla diam at nulla." },
-  { image: work3, title: "Insurva | Analytics", description: "Integer ipsum curabitur sit nulla posuere." },
-  { image: work4, title: "Insurva | Dashboard", description: "Lorem ipsum dolor sit amet consectetur." },
-  { image: work4, title: "Insurva | Dashboard", description: "Lorem ipsum dolor sit amet consectetur." },
+  { image: work1, title: "Insurva | Web App", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
+  { image: work2, title: "Insurva | AI Bot", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
+  { image: work3, title: "Insurva | Analytics", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
+  { image: work4, title: "Insurva | Dashboard", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
+  { image: work5, title: "Insurva | Dashboard", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
 ];
 
 export default function Works() {
@@ -23,7 +24,7 @@ export default function Works() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="bg-transparent text-white py-20 px-6 md:px-12">
+    <section className="bg-transparent text-white py-20 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <h3 className="text-xl text-[#194EFF] mb-2 ">WORKS</h3>
         <h1 className="text-4xl font-bold mb-10 tracking-wide">What We've Created</h1>
@@ -55,7 +56,7 @@ export default function Works() {
               <SwiperSlide key={index}>
                 <div
                   onClick={() => swiperRef.current?.slideToLoop(index)}
-                  className={`bg-[#0B0B2E]/70 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden shadow-lg mx-auto transition-all duration-500
+                  className={`bg-[#55555547] backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden shadow-lg mx-auto transition-all duration-500
                     ${
                       index === activeIndex
                         ? "scale-105 opacity-100 z-20"
@@ -69,7 +70,7 @@ export default function Works() {
                   />
                   <div className="p-4 md:p-6 text-left">
                     <h3 className="text-lg md:text-xl font-gilroy-bold mb-2">{work.title}</h3>
-                    <p className="text-gray-300 text-sm md:text-base font-gilroy-light">{work.description}</p>
+                    <p className="text-gray-300 text-xs md:text-sm font-gilroy-light">{work.description}</p>
                   </div>
                 </div>
               </SwiperSlide>

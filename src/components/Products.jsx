@@ -1,5 +1,3 @@
-// src/components/Products.jsx
-
 import React, { useState } from "react";
 import cardImage from "../assets/card.jpg"; // adjust path if needed
 
@@ -10,7 +8,8 @@ const productsData = [
     title: "Automated Product Videography",
     description:
       "Turn any product photo into stunning professional product photography and promotional videos – powered by AI.",
-    overlayDescription:"Our Automated Product Videography tool transforms simple product photos into high-quality product photography and engaging promotional videos within minutes. No studio, no models, no expensive shoots – just upload a photo and get professional visuals ready for social media, e-commerce, and marketing campaigns. Perfect for businesses who want cost-effective product ads at scale.",
+    overlayDescription:
+      "Our Automated Product Videography tool transforms simple product photos into high-quality product photography and engaging promotional videos within minutes. No studio, no models, no expensive shoots – just upload a photo and get professional visuals ready for social media, e-commerce, and marketing campaigns. Perfect for businesses who want cost-effective product ads at scale.",
     category: "AI Products",
     image: cardImage,
   },
@@ -18,7 +17,8 @@ const productsData = [
     title: "AI UGC Video Generator",
     description:
       "Generate authentic UGC-style videos from a product photo — with or without a custom character.",
-    overlayDescription:"Our Automated Product Videography tool transforms simple product photos into high-quality product photography and engaging promotional videos within minutes. No studio, no models, no expensive shoots – just upload a photo and get professional visuals ready for social media, e-commerce, and marketing campaigns. Perfect for businesses who want cost-effective product ads at scale.",
+    overlayDescription:
+      "Our Automated Product Videography tool transforms simple product photos into high-quality product photography and engaging promotional videos within minutes. No studio, no models, no expensive shoots – just upload a photo and get professional visuals ready for social media, e-commerce, and marketing campaigns. Perfect for businesses who want cost-effective product ads at scale.",
     category: "AI Products",
     image: cardImage,
   },
@@ -26,7 +26,8 @@ const productsData = [
     title: "AI UGC Video Generator for Jewelry",
     description:
       "Showcase your jewelry in elegant, lifestyle-inspired UGC videos designed for brand storytelling.",
-    overlayDescription:"Our Automated Product Videography tool transforms simple product photos into high-quality product photography and engaging promotional videos within minutes. No studio, no models, no expensive shoots – just upload a photo and get professional visuals ready for social media, e-commerce, and marketing campaigns. Perfect for businesses who want cost-effective product ads at scale.",
+    overlayDescription:
+      "Our Automated Product Videography tool transforms simple product photos into high-quality product photography and engaging promotional videos within minutes. No studio, no models, no expensive shoots – just upload a photo and get professional visuals ready for social media, e-commerce, and marketing campaigns. Perfect for businesses who want cost-effective product ads at scale.",
     category: "Lorem 1",
     image: cardImage,
   },
@@ -42,14 +43,30 @@ const Products = () => {
       : productsData.filter((p) => p.category === selectedCategory);
 
   return (
-    <div className="bg-transparent text-white py-16 px-4 min-h-screen">
-      <div className="max-w-6xl mx-auto text-center">
+    <div className="relative bg-transparent text-white py-16 px-4 min-h-screen overflow-hidden">
+      {/* 🌈 Animated gradient top-left */}
+      <div className="absolute top-40 -right-20 w-[500px] h-[500px] bg-gradient-to-br from-[#0020d8b6] via-[#00041F] to-[#04123f] opacity-40 rounded-full blur-3xl animate-gradientMove pointer-events-none overflow-hiddenn"></div>
+      <div className="absolute bottom-28 -right-40 w-[400px] h-[400px] bg-gradient-to-br from-[#0020d88e] via-[#00041F] to-[#04123fda] opacity-40 rounded-full blur-3xl animate-gradientMove pointer-events-none overflow-hidden"></div>
+      <div className="absolute bottom-20 -left-40 w-[400px] h-[400px] bg-gradient-to-br from-[#0020d865] via-[#00041fda] to-[#04123fbb] opacity-40 rounded-full blur-3xl animate-gradientMove pointer-events-none overflow-hidden"></div>
+      {/* Gradient Animation (keyframes in Tailwind extension) */}
+      <style>{`
+        @keyframes gradientMove {
+          0% { transform: translate(-20px, -20px) scale(1); opacity: 0.6; }
+          50% { transform: translate(40px, 30px) scale(1.1); opacity: 0.8; }
+          100% { transform: translate(-20px, -20px) scale(1); opacity: 0.6; }
+        }
+        .animate-gradientMove {
+          animation: gradientMove 8s ease-in-out infinite;
+        }
+      `}</style>
+
+      <div className="max-w-6xl mx-auto text-center relative z-10">
         {/* Heading */}
         <h2 className="text-xl text-[#194EFF] mb-6">PRODUCTS</h2>
         <h1 className="text-4xl font-bold mb-12">Explore Our Innovations</h1>
 
         {/* Category Buttons */}
-        <div className="flex flex-wrap justify-center gap-10 mb-12">
+        <div className="flex flex-wrap justify-center gap-10 sm:gap-6 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -79,14 +96,12 @@ const Products = () => {
                   setActiveIndex(activeIndex === index ? null : index)
                 }
               >
-                {/* Image */}
                 <img
                   src={product.image}
                   alt={product.title}
                   className="w-full h-2/3 p-2 object-cover rounded-3xl"
                 />
 
-                {/* Card Content */}
                 <div className="p-5 text-left">
                   <h3 className="text-xl font-semibold mb-2 tracking-wide">
                     {product.title}
@@ -98,7 +113,7 @@ const Products = () => {
 
                 {/* Overlay */}
                 <div
-                  className={`absolute inset-0 bg-[#194EFF] text-white rounded-3xl flex flex-col justify-center items-start text-left p-6 transition-all duration-500 ${
+                  className={`absolute inset-0 bg-[#194EFF] text-white rounded-3xl flex flex-col justify-center items-start text-left p-4 transition-all duration-500 ${
                     activeIndex === index
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-2 pointer-events-none"
@@ -107,7 +122,7 @@ const Products = () => {
                   <h3 className="text-xl font-bold mb-3 tracking-wide">
                     {product.title}
                   </h3>
-                  <p className="text-white/90 text-lg mb-6 leading-relaxed font-thin">
+                  <p className="text-white/90 md:text-lg text-sm mb-6 leading-relaxed font-thin">
                     {product.overlayDescription}
                   </p>
                   <button className="bg-white text-[#194EFF] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition w-full bottom-0">
@@ -124,9 +139,7 @@ const Products = () => {
               className="relative bg-[#55555547] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-lg w-[350px] md:w-[420px] md:h-[520px] cursor-pointer transition-transform duration-300 hover:scale-102"
               onMouseEnter={() => setActiveIndex(2)}
               onMouseLeave={() => setActiveIndex(null)}
-              onClick={() =>
-                setActiveIndex(activeIndex === 2 ? null : 2)
-              }
+              onClick={() => setActiveIndex(activeIndex === 2 ? null : 2)}
             >
               <img
                 src={filteredProducts[2].image}
@@ -145,7 +158,7 @@ const Products = () => {
 
               {/* Overlay */}
               <div
-                className={`absolute inset-0 bg-[#194EFF] text-white rounded-3xl flex flex-col justify-center items-start text-left p-6 transition-all duration-500 ${
+                className={`absolute inset-0 bg-[#194EFF] text-white rounded-3xl flex flex-col justify-center items-start text-left p-4 transition-all duration-500 ${
                   activeIndex === 2
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-2 pointer-events-none"
@@ -154,7 +167,7 @@ const Products = () => {
                 <h3 className="text-xl font-bold mb-3 tracking-wide">
                   {filteredProducts[2].title}
                 </h3>
-                <p className="text-white/90 text-lg mb-6 leading-relaxed font-thin">
+                <p className="text-white/90 md:text-lg text-sm mb-6 leading-relaxed font-thin">
                   {filteredProducts[2].overlayDescription}
                 </p>
                 <button className="bg-white text-[#194EFF] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 w-full bottom-0 transition">
