@@ -58,3 +58,24 @@ body{
 .animate-moveMoon {
   animation: moveMoon 20s linear infinite;
 }
+/* @keyframes rotate3D {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg) scale(1);
+  }
+  25% {
+    transform: rotateY(90deg) rotateX(10deg) scale(1.1);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(0deg) scale(1);
+  }
+  75% {
+    transform: rotateY(270deg) rotateX(-10deg) scale(1.1);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(0deg) scale(1);
+  }
+}
+
+.animate-rotate3D {
+  animation: rotate3D 3.5s ease-in-out infinite;
+} */

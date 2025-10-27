@@ -31,20 +31,30 @@ export default function Footer() {
         {/* Middle Section - Important Links */}
         <div className="grid grid-cols-2 gap-x-6">
           <div className="col-span-2">
-            <h3 className="font-semibold  text-white md:text-xl text-lg tracking-wider mb-8 md:mb-4 ">
+            <h3 className="font-semibold text-white md:text-xl text-lg tracking-wider mb-8 md:mb-4">
               Important Links
             </h3>
           </div>
 
           <div>
             <ul className="space-y-3 md:text-base text-sm -mt-5 text-gray-200">
-              {["Home", "About Us", "Services", "Projects"].map((item) => (
+              {[
+                { name: "Home", link: "#" },
+                { name: "About Us", link: "#About" },
+                { name: "Services", link: "#services" },
+                { name: "Projects", link: "#projects" },
+              ].map((item) => (
                 <li
-                  key={item}
-                  className="hover:text-white transition flex items-center gap-2"
+                  key={item.name}
+                  className="hover:text-white transition flex items-center gap-2 cursor-pointer"
                 >
                   <TbRectangleVerticalFilled className="w-3 h-3 text-white" />
-                  {item}
+                  <a
+                    href={item.link}
+                    className="hover:underline"
+                  >
+                    {item.name}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -69,6 +79,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
 
         {/* Right Section - Contact Info */}
         <div>

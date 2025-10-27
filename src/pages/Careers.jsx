@@ -117,9 +117,11 @@ const Careers = () => {
               />
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
+                  <div className="flex flex-row">
+                  <div className="w-1.5 h-[52px] rounded-full bg-[#3564ff] top-16 mt-4 -left-20 -ml-3 overflow-visible"></div>
                   <h3 className="text-[24px] font-semibold mb-4 m-2 pt-3 text-left tracking-wider px-2">
                     {job.title}
-                  </h3>
+                  </h3></div>
                   <p className="text-gray-300 md:text-lg text-base leading-relaxed m-2 font-thin">
                     {job.desc}
                   </p>
