@@ -107,7 +107,7 @@ const Careers = () => {
           {displayedJobs.map((job, i) => (
             <div
               key={i}
-              className="relative rounded-[35px] h-96 md:h-[380px] md:w-[380px] overflow-hidden p-3 border-[1px] border-[#001FD8] backdrop-blur-md hover:border-blue-400/50 hover:shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all duration-300"
+              className="relative rounded-[35px] h-[360px] md:h-[380px] md:w-[380px] overflow-hidden p-3 border-[1px] border-[#001FD8] backdrop-blur-md hover:border-blue-400/50 hover:shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-[#194EFF] to-[#00041F]"></div>
               <img
@@ -120,7 +120,7 @@ const Careers = () => {
                   <h3 className="text-[24px] font-semibold mb-4 m-2 pt-3 text-left tracking-wider px-2">
                     {job.title}
                   </h3>
-                  <p className="text-gray-300 text-lg leading-relaxed m-2 font-thin">
+                  <p className="text-gray-300 md:text-lg text-base leading-relaxed m-2 font-thin">
                     {job.desc}
                   </p>
                 </div>
