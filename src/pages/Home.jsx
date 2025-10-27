@@ -11,7 +11,7 @@ import Works from "../components/Works";
 // Images
 import bgImage from "../assets/hero.jpg";
 import overlayImage from "../assets/overlay.jpg";
-import serviceBg from "../assets/bg.png"; // ✅ your background for Services + Products
+import serviceBg from "../assets/bg.webp";
 
 const Home = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -21,6 +21,11 @@ const Home = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  useEffect(() => {
+  const img = new Image();
+  img.src = serviceBg;
+}, []);
+
 
   return (
     <div className="relative pt-20 overflow-x-hidden">
@@ -55,23 +60,20 @@ const Home = () => {
       <AboutSection />
 
       {/* ✅ Combined Background for Services + Products */}
-      <section className="relative w-full z-0 overflow-hidden">
-        {/* Background Image for Services + Products */}
-        <img
-          src={serviceBg}
-          alt="Services and Products Background"
-          className="absolute inset-0 w-full h-full object-cover opacity-50 z-0 top-1/3 overflow-hidden"
-        />
-        {/* Optional overlay for smooth blending */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#00041F]/40 to-transparent z-0 top-1/3"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-[#00041F]/40 to-transparent z-0 bottom-0"></div>
+  <section className="relative w-full z-0 overflow-hidden">
+    <div
+      className="absolute inset-0 bg-cover bg-center opacity-70 z-0 top-1/3"
+      style={{ backgroundImage: `url(${serviceBg})` }}
+    ></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#00041F]/40 to-transparent z-0 top-1/3"></div>
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-[#00041F]/40 to-transparent z-0 bottom-0"></div>
 
-        {/* Actual Sections */}
-        <div className="relative z-10">
-          <Services />
-          <Products />
-        </div>
-      </section>
+    <div className="relative z-10">
+      <Services />
+      <Products />
+    </div>
+  </section>
+
 
       <Works />
       <Contact />
