@@ -67,38 +67,41 @@ export default function Contact() {
             <ArrowRight className="bg-white text-blue-600 rounded-full p-1 w-7 h-7" />
           </button>
           </form>
-        </div>
+          </div>
 
-        {/* Right: Map */}
-        <div className="relative w-full h-96 md:h-auto px-6 py-7">
-          <iframe
-            title="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.036009468882!2d75.78040207406277!3d11.256078688946525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65e1b5d4570df%3A0x8bfffb2bb2e80d6!2sHiLITE%20Business%20Park!5e0!3m2!1sen!2sin!4v1699450135158!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            allowFullScreen=""
-            loading="lazy"
-            className="rounded-2xl border-0"
-          ></iframe>
-        </div>
+          {/* Right: Map */}
+          <div className="relative w-full h-96 md:h-auto px-6 py-7">
+            <iframe
+              title="map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.1892559963344!2d75.83090097402366!3d11.247484050330423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b2adf0f23a7%3A0xeaa072a82e5d541e!2sHiLITE%20Business%20Park%20-%20Tower%202!5e0!3m2!1sen!2sin!4v1761559247154!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-2xl border-0"
+            ></iframe>
+          </div>
+
       </div>
 
       {/* Contact Info */}
       <div className="mt-10 w-full max-w-5xl flex flex-col md:flex-row justify-between items-center bg-[#0B112A] p-4 rounded-xl">
-        <div className="flex items-center gap-3 md:border md:border-r-[#001FD8] border-transparent px-8">
+        <div className="flex items-center md:gap-3 gap-5 md:border md:border-r-[#001FD8] border-transparent px-8">
           <img src={phoneIcon} alt="Phone" className="" />
-          <div>
-            <p className="font-medium text-[#194EFF] text-xl">Call</p>
-            <p className="text-gray-400 text-sm">+91 97465 77647</p>
-            <p className="text-gray-400 text-sm">+91 94461 86026</p>
+          <div className="mt-2 md:mt-0">
+            <p className="font-medium text-[#194EFF] md:text-xl text-sm">Call</p>
+            <p className="text-gray-400 md:text-sm text-xs">+91 97465 77647</p>
+            <p className="text-gray-400 md:text-sm text-xs">+91 94461 86026</p>
           </div>
         </div>
 
         <div className="flex items-center gap-3 md:border md:border-r-[#001FD8] border-transparent px-8">
           <img src={emailIcon} alt="Email" className="" />
           <div>
-            <p className="font-medium text-[#194EFF] text-xl mt-1">Email</p>
-            <p className="text-gray-400 text-sm">aixinortechnologies@gmail.com</p>
+            <p className="font-medium text-[#194EFF] md:text-xl text-sm md:mt-1 mt-3">Email</p>
+            <p className="text-gray-400 md:text-sm text-xs">aixinortechnologies@gmail.com</p>
             <br />
           </div>
         </div>
@@ -106,8 +109,8 @@ export default function Contact() {
         <div className="flex items-center gap-3 px-8">
           <img src={locationIcon} alt="Location" className="" />
           <div>
-            <p className="font-medium text-[#194EFF] text-xl mt-1">Location</p>
-            <p className="text-gray-400 text-sm">HiLITE Business Park, Kozhikode, Kerala, India</p>
+            <p className="font-medium text-[#194EFF] md:text-xl text-sm md:mt-1 mt-3">Location</p>
+            <p className="text-gray-400 md:text-sm text-xs">HiLITE Business Park, Kozhikode, Kerala, India</p>
             <br />
           </div>
         </div>

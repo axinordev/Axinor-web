@@ -104,7 +104,7 @@ const Portfolio = () => {
 
               {/* Info Section */}
               <div className="backdrop-blur-xl bg-[#010512]/60 rounded-b-[30px] p-6 text-left">
-                <h3 className="text-[22px] font-semibold text-white mb-2">
+                <h3 className="text-[22px] font-semibold text-white mb-2 tracking-wide">
                   {project.title}
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">

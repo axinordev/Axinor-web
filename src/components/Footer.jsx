@@ -22,7 +22,7 @@ export default function Footer() {
             alt="AXINOR Technologies"
             className="w-64 h-auto object-contain mb-4 -ml-4"
           />
-          <p className="text-base text-white leading-relaxed px-2">
+          <p className="md:text-base text-sm text-white leading-relaxed px-2">
             AXINOR blends creativity, strategy, and technology to craft impactful
             solutions that help brands grow and connect with their audience.
           </p>
@@ -31,13 +31,13 @@ export default function Footer() {
         {/* Middle Section - Important Links */}
         <div className="grid grid-cols-2 gap-x-6">
           <div className="col-span-2">
-            <h3 className="font-semibold  text-white text-xl tracking-wider mb-8 md:mb-4 ">
+            <h3 className="font-semibold  text-white md:text-xl text-lg tracking-wider mb-8 md:mb-4 ">
               Important Links
             </h3>
           </div>
 
           <div>
-            <ul className="space-y-3 text-base -mt-5 text-gray-200">
+            <ul className="space-y-3 md:text-base text-sm -mt-5 text-gray-200">
               {["Home", "About Us", "Services", "Projects"].map((item) => (
                 <li
                   key={item}
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <ul className="space-y-3 text-base -mt-5 -ml-5 text-gray-200">
+            <ul className="space-y-3 md:text-base text-sm -mt-5 -ml-5 text-gray-200">
               {[
                 "Design & Development",
                 "Research & Innovation",
@@ -72,8 +72,8 @@ export default function Footer() {
 
         {/* Right Section - Contact Info */}
         <div>
-          <h3 className="font-semibold mb-4 text-white text-lg ">Contact Us</h3>
-          <ul className="space-y-4 text-base text-gray-200">
+          <h3 className="font-semibold mb-4 text-white md:text-lg text-base">Contact Us</h3>
+          <ul className="space-y-4 text-sm md:text-base text-gray-200">
             <li className="flex items-start gap-3 border-b border-[#194EFF] py-3">
               <IoMdMail className="w-5 h-5 mt-1 text-white" />
               <span>aixinortechnologies@gmail.com</span>
@@ -84,7 +84,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3 py-3 pr-10">
               <FaLocationDot className="w-6 h-6 mt-1 text-white" />
-              <span className="text-base">
+              <span className="text-sm md:text-base">
                 HiLITE Business Park - Tower 2, 7th floor (MPM-X205), Poovangal,
                 Kozhikode, Pantheerankavu, Kerala 673014
               </span>
@@ -94,7 +94,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section - Copyright */}
-      <div className="text-center mt-6 text-base text-gray-200">
+      <div className="text-center mt-6 md:text-base text-sm text-gray-200">
         Copyright ©2025 All rights reserved |{" "}
         <span className="font-medium">AXINOR TECHNOLOGIES</span>
       </div>

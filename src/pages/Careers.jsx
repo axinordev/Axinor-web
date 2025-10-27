@@ -28,7 +28,7 @@ const Careers = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [selectedJob, setSelectedJob] = useState("");
-  const [filter, setFilter] = useState("active"); // 👈 NEW: filter state
+  const [filter, setFilter] = useState("active");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -46,7 +46,6 @@ const Careers = () => {
     setSelectedJob("");
   };
 
-  // 👇 Determine which job list to show
   const displayedJobs = filter === "active" ? activeJobs : expiredJobs;
 
   return (
@@ -79,7 +78,7 @@ const Careers = () => {
           Careers
         </h1>
 
-        {/* Buttons */}
+        {/* Filter Buttons */}
         <div className="flex justify-center gap-6 mb-16 md:mt-24 -mt-10">
           <button
             onClick={() => setFilter("active")}
@@ -126,7 +125,6 @@ const Careers = () => {
                   </p>
                 </div>
 
-                {/* Apply button visible only for active jobs */}
                 {filter === "active" && (
                   <div className="m-2 p-1">
                     <button
@@ -138,7 +136,6 @@ const Careers = () => {
                   </div>
                 )}
 
-                {/* Expired Label */}
                 {filter === "expired" && (
                   <div className="m-2 p-1">
                     <button
@@ -156,138 +153,136 @@ const Careers = () => {
       </div>
 
       {/* Popup Form */}
-      {showForm && (
-        <div
-          className="absolute inset-0 z-50 bg-transparent flex justify-center"
-          onScroll={closeForm}
-        >
-          <div className="absolute top-[120px] bg-[#0000003D] backdrop-blur-2xl border border-blue-700 rounded-[30px] p-8 md:p-10 w-[90%] max-w-4xl shadow-[0_0_25px_rgba(56,189,248,0.3)] transition-all duration-300 ease-out">
-            <h2 className="text-3xl font-bold text-center mb-2">Fill the Details</h2>
-            <p className="text-center text-gray-400 mb-8">
-              Fill the details below
-            </p>
+{/* Popup Form */}
+{showForm && (
+  <div className="absolute inset-0 z-50 bg-[#00000099] flex justify-center items-start overflow-y-auto py-10 px-4">
+    <div className="relative bg-[#0000003D] backdrop-blur-2xl border border-blue-700 rounded-[30px] p-6 md:p-10 w-full sm:w-[90%] max-w-4xl shadow-[0_0_25px_rgba(56,189,248,0.3)] transition-all duration-300 ease-out mt-20">
 
-            {/* Form same as before */}
-            <form className="grid md:grid-cols-3 gap-6 text-left">
-              <div>
-                <label className="block mb-2 text-sm">Full Name</label>
-                <input
-                  type="text"
-                  placeholder="Enter Your Full Name"
-                  className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
-                />
-              </div>
+      {/* Dynamic Heading */}
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 leading-snug mt-3">
+        Fill the Application for{" "}
+        <span className="text-blue-400">{selectedJob}</span>
+      </h2>
+      <p className="text-center text-gray-400 mb-8 text-sm md:text-base">
+        Fill the details below
+      </p>
 
-              <div>
-                <label className="block mb-2 text-sm">Mobile Number</label>
-                <input
-                  type="text"
-                  placeholder="Enter Your Mobile Number"
-                  className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-2 text-sm">Email Address</label>
-                <input
-                  type="email"
-                  placeholder="Enter Your Email"
-                  className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-2 text-sm">Qualification</label>
-                <input
-                  type="text"
-                  placeholder="Enter Your Qualification"
-                  className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-2 text-sm">Location</label>
-                <select
-                  className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
-                >
-                  <option value="" className="bg-[#010512]">
-                    Select Location
-                  </option>
-                  <option value="Trivandrum" className="bg-[#010512]">Trivandrum</option>
-                  <option value="Kochi" className="bg-[#010512]">Kochi</option>
-                  <option value="Bangalore" className="bg-[#010512]">Bangalore</option>
-                  <option value="Chennai" className="bg-[#010512]">Chennai</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block mb-2 text-sm">Experience</label>
-                <select
-                  className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
-                >
-                  <option value="" className="bg-[#010512]">Select Experience</option>
-                  <option value="Fresher" className="bg-[#010512]">Fresher</option>
-                  <option value="0-1 years" className="bg-[#010512]">0-1 years</option>
-                  <option value="1-3 years" className="bg-[#010512]">1-3 years</option>
-                  <option value="3+ years" className="bg-[#010512]">3+ years</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block mb-2 text-sm">Resume</label>
-                <input
-                  type="file"
-                  className="w-full text-sm text-gray-400 border border-[#FFFFFF73] rounded-md cursor-pointer file:bg-blue-700 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-md"
-                />
-                <p className="text-xs text-gray-500 mt-1">File must be PDF or image</p>
-              </div>
-
-              <div>
-                <label className="block mb-2 text-sm">LinkedIn</label>
-                <input
-                  type="text"
-                  placeholder="Enter LinkedIn Profile Link"
-                  className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-2 text-sm">Portfolio</label>
-                <input
-                  type="text"
-                  placeholder="Enter Portfolio Link"
-                  className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
-                />
-              </div>
-
-              <div className="md:col-span-3">
-                <label className="block mb-2 text-sm">Open Space For You</label>
-                <textarea
-                  placeholder="Whether it’s a personal note, career goals, or something we didn’t ask—this is your space to share."
-                  rows={3}
-                  className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
-                ></textarea>
-              </div>
-
-              <div className="col-span-3 text-center mt-6">
-                <button
-                  type="submit"
-                  className="px-12 py-3 bg-[#194EFF] text-white rounded-full hover:bg-blue-700 transition"
-                >
-                  Apply Now
-                </button>
-              </div>
-            </form>
-
-            <button
-              onClick={closeForm}
-              className="absolute top-4 right-6 text-white text-xl hover:text-red-500"
-            >
-              ✕
-            </button>
-          </div>
+      {/* Responsive Form */}
+      <form className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-left">
+        <div>
+          <label className="block mb-2 text-sm">Full Name</label>
+          <input
+            type="text"
+            placeholder="Enter Your Full Name"
+            className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
+          />
         </div>
-      )}
+
+        <div>
+          <label className="block mb-2 text-sm">Mobile Number</label>
+          <input
+            type="text"
+            placeholder="Enter Your Mobile Number"
+            className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
+          />
+        </div>
+
+        <div>
+          <label className="block mb-2 text-sm">Email Address</label>
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
+          />
+        </div>
+
+        <div>
+          <label className="block mb-2 text-sm">Qualification</label>
+          <input
+            type="text"
+            placeholder="Enter Your Qualification"
+            className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
+          />
+        </div>
+
+        <div>
+          <label className="block mb-2 text-sm">Location</label>
+          <select className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none">
+            <option value="" className="bg-[#010512]">Select Location</option>
+            <option value="Trivandrum" className="bg-[#010512]">Trivandrum</option>
+            <option value="Kochi" className="bg-[#010512]">Kochi</option>
+            <option value="Bangalore" className="bg-[#010512]">Bangalore</option>
+            <option value="Chennai" className="bg-[#010512]">Chennai</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block mb-2 text-sm">Experience</label>
+          <select className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none">
+            <option value="" className="bg-[#010512]">Select Experience</option>
+            <option value="Fresher" className="bg-[#010512]">Fresher</option>
+            <option value="0-1 years" className="bg-[#010512]">0-1 years</option>
+            <option value="1-3 years" className="bg-[#010512]">1-3 years</option>
+            <option value="3+ years" className="bg-[#010512]">3+ years</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block mb-2 text-sm">Resume</label>
+          <input
+            type="file"
+            className="w-full text-sm text-gray-400 border border-[#FFFFFF73] rounded-md cursor-pointer file:bg-blue-700 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-md"
+          />
+          <p className="text-xs text-gray-500 mt-1">File must be PDF or image</p>
+        </div>
+
+        <div>
+          <label className="block mb-2 text-sm">LinkedIn</label>
+          <input
+            type="text"
+            placeholder="Enter LinkedIn Profile Link"
+            className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
+          />
+        </div>
+
+        <div>
+          <label className="block mb-2 text-sm">Portfolio</label>
+          <input
+            type="text"
+            placeholder="Enter Portfolio Link"
+            className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
+          />
+        </div>
+
+        <div className="sm:col-span-2 md:col-span-3">
+          <label className="block mb-2 text-sm">Open Space For You</label>
+          <textarea
+            placeholder="Whether it’s a personal note, career goals, or something we didn’t ask—this is your space to share."
+            rows={3}
+            className="w-full px-4 py-2 rounded-md bg-transparent border border-[#FFFFFF73] focus:border-blue-500 outline-none"
+          ></textarea>
+        </div>
+
+        <div className="col-span-full text-center mt-6">
+          <button
+            type="submit"
+            className="px-12 py-3 bg-[#194EFF] text-white rounded-full hover:bg-blue-700 transition"
+          >
+            Apply Now
+          </button>
+        </div>
+      </form>
+
+      <button
+        onClick={closeForm}
+        className="absolute top-4 right-6 text-white text-xl hover:text-red-500"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
+)}
+
 
       <Footer />
     </div>
