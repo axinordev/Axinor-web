@@ -90,7 +90,7 @@ const Portfolio = () => {
           {projects.map((project, i) => (
             <div
               key={i}
-              className="relative rounded-[30px] overflow-hidden bg-[#06091E] border border-[#001FD8]/30 hover:border-[#194EFF] transition-all duration-300 hover:shadow-[0_0_20px_rgba(25,78,255,0.4)] group"
+              className="relative rounded-[30px] overflow-hidden bg-[#55555547] border border-[#010e55ad] hover:border-[#194fff6c] transition-all duration-300 hover:shadow-[0_0_20px_rgba(25,78,255,0.4)] group"
             >
               {/* Image Section */}
               <div className="relative overflow-hidden">
