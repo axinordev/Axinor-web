@@ -12,11 +12,11 @@ import work4 from "../assets/card4.png";
 import work5 from "../assets/card5.png";
 
 const works = [
-  { image: work1, title: "Insurva | Web App", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
-  { image: work2, title: "Insurva | AI Bot", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
-  { image: work3, title: "Insurva | Analytics", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
-  { image: work4, title: "Insurva | Dashboard", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
-  { image: work5, title: "Insurva | Dashboard", description: "Lorem ipsum dolor sit amet consectetur. Integer ipsum curabitur sit nulla posuere. Ut arcu nunc nulla diam at nulla. Posuere." },
+  { image: work1, title: "Insurva | Web App", description: "A responsive insurance management portal allowing customers to buy, renew, and track policies online with real-time claim updates." },
+  { image: work2, title: "Insurva | Web App", description: "A responsive insurance management portal allowing customers to buy, renew, and track policies online with real-time claim updates."  },
+  { image: work3, title: "Insurva | Web App", description: "A responsive insurance management portal allowing customers to buy, renew, and track policies online with real-time claim updates."  },
+  { image: work4, title: "Insurva | Web App", description: "A responsive insurance management portal allowing customers to buy, renew, and track policies online with real-time claim updates."  },
+  { image: work5, title: "Insurva | Web App", description: "A responsive insurance management portal allowing customers to buy, renew, and track policies online with real-time claim updates." },
 ];
 
 export default function Works() {

@@ -62,9 +62,15 @@ const Home = () => {
       {/* ✅ Combined Background for Services + Products */}
   <section className="relative w-full z-0 overflow-hidden">
     <div
-      className="absolute inset-0 bg-cover bg-center opacity-70 z-0 top-1/3"
-      style={{ backgroundImage: `url(${serviceBg})` }}
-    ></div>
+    className="absolute inset-0 bg-center bg-no-repeat bg-cover z-0 top-1/3 transition-opacity duration-700"
+    style={{
+      backgroundImage: `url(${serviceBg})`,
+      opacity: 0.9,
+      willChange: "transform",
+      transform: "translateZ(0)",
+    }}
+  ></div>
+
     <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#00041F]/40 to-transparent z-0 top-1/3"></div>
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-[#00041F]/40 to-transparent z-0 bottom-0"></div>
 

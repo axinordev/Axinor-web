@@ -20,28 +20,28 @@ const projects = [
     img: img1,
   },
   {
-    title: "MediLink",
-    desc: "A cloud-based telemedicine platform connecting patients and doctors globally.",
+    title: "Insurva",
+    desc: "A modern insurance management system with AI-based claim tracking and analytics.",
     img: img2,
   },
   {
-    title: "EduSmart",
-    desc: "An intelligent learning management system powered by adaptive AI recommendations.",
+    title: "Insurva",
+    desc: "A modern insurance management system with AI-based claim tracking and analytics.",
     img: img3,
   },
   {
-    title: "TaskSphere",
-    desc: "Collaborative productivity dashboard with real-time progress visualization.",
+    title: "Insurva",
+    desc: "A modern insurance management system with AI-based claim tracking and analytics.",
     img: img4,
   },
   {
-    title: "AxinoPay",
-    desc: "A secure fintech solution offering instant payments and multi-currency wallets.",
+    title: "Insurva",
+    desc: "A modern insurance management system with AI-based claim tracking and analytics.",
     img: img5,
   },
   {
-    title: "AgriTech AI",
-    desc: "Smart agriculture platform for predictive yield analytics and IoT-based field monitoring.",
+    title: "Insurva",
+    desc: "A modern insurance management system with AI-based claim tracking and analytics.",
     img: img6,
   },
 ];

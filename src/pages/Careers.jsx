@@ -7,21 +7,21 @@ import serviceImg from "../assets/service.jpg";
 import Nav from "../components/Nav";
 
 const activeJobs = [
-  { title: "UI/UX Designer", desc: "Lorem ipsum dolor sit amet consectetur. At gravida urna purus massa in. Quam egestas justo cras egestas diam lobortis. Auctor dui suspendisse turpis integer. Orci commodo duis nisl integer vestibulum sit. Turpis leo volutpat mauris suspendisse risus." },
-  { title: "Flutter Developer", desc: "Lorem ipsum dolor sit amet consectetur. At gravida urna purus massa in. Quam egestas justo cras egestas diam lobortis. Auctor dui suspendisse turpis integer. Orci commodo duis nisl integer vestibulum sit. Turpis leo volutpat mauris suspendisse risus." },
-  { title: "Cyber Security", desc: "Lorem ipsum dolor sit amet consectetur. At gravida urna purus massa in. Quam egestas justo cras egestas diam lobortis. Auctor dui suspendisse turpis integer. Orci commodo duis nisl integer vestibulum sit. Turpis leo volutpat mauris suspendisse risus." },
-  { title: "Back-end Developer", desc: "Lorem ipsum dolor sit amet consectetur. At gravida urna purus massa in. Quam egestas justo cras egestas diam lobortis. Auctor dui suspendisse turpis integer. Orci commodo duis nisl integer vestibulum sit. Turpis leo volutpat mauris suspendisse risus." },
-  { title: "UI/UX Designer", desc: "Lorem ipsum dolor sit amet consectetur. At gravida urna purus massa in. Quam egestas justo cras egestas diam lobortis. Auctor dui suspendisse turpis integer. Orci commodo duis nisl integer vestibulum sit. Turpis leo volutpat mauris suspendisse risus." },
-  { title: "Full Stack Developer", desc: "Lorem ipsum dolor sit amet consectetur. At gravida urna purus massa in. Quam egestas justo cras egestas diam lobortis. Auctor dui suspendisse turpis integer. Orci commodo duis nisl integer vestibulum sit. Turpis leo volutpat mauris suspendisse risus." },
+  { title: "UI/UX Designer", desc: "Learn how to create intuitive and visually appealing digital interfaces. This course covers user research, wireframing, prototyping, and usability testing using tools like Figma and Adobe XD." },
+  { title: "Flutter Developer", desc: "Build beautiful cross-platform mobile apps using Flutter and Dart. Master UI design, state management, Firebase integration, and deployment for both Android and iOS." },
+  { title: "Cyber Security", desc: "Gain practical knowledge in protecting networks, systems, and data from cyber threats. Learn ethical hacking, encryption, and incident response with hands-on labs and case studies." },
+  { title: "Back-end Developer", desc: "Develop robust server-side applications using Node.js, Express, and MongoDB. Understand RESTful APIs, authentication, and database management to power modern web applications." },
+  { title: "AI & Machine Learning", desc: "Master the foundations of Artificial Intelligence and Machine Learning using Python. Learn algorithms, neural networks, and real-world applications in image and text analysis." },
+  { title: "Front-End Developer", desc: "Learn to build responsive and interactive websites using HTML, CSS, JavaScript, and React. Get hands-on experience in UI design, animations, and API integration." },
 ];
 
 const expiredJobs = [
-  { title: "React Developer", desc: "This position has been closed. Stay tuned for future openings!" },
+  { title: "React Developer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
   { title: "Data Analyst Intern", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
-  { title: "DevOps Engineer", desc: "Recruitment for this role has ended. Check back later for updates!" },
-  { title: "DevOps Engineer", desc: "Recruitment for this role has ended. Check back later for updates!" },
-  { title: "DevOps Engineer", desc: "Recruitment for this role has ended. Check back later for updates!" },
-  { title: "DevOps Engineer", desc: "Recruitment for this role has ended. Check back later for updates!" },
+  { title: "DevOps Engineer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
+  { title: "DevOps Engineer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
+  { title: "DevOps Engineer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
+  { title: "DevOps Engineer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
 ];
 
 const Careers = () => {

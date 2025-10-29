@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import cardImage from "../assets/card.jpg"; // adjust path if needed
+import cardImage from "../assets/card.jpg";
+import ReactMarkdown from "react-markdown";
 
 const categories = ["All", "AI Products", "Lorem 1", "Lorem 1", "Lorem 1", "Lorem 1"];
 
@@ -17,8 +18,13 @@ const productsData = [
     title: "AI UGC Video Generator",
     description:
       "Generate authentic UGC-style videos from a product photo — with or without a custom character.",
-    overlayDescription:
-      "Our Automated Product Videography tool transforms simple product photos into high-quality product photography and engaging promotional videos within minutes. No studio, no models, no expensive shoots – just upload a photo and get professional visuals ready for social media, e-commerce, and marketing campaigns. Perfect for businesses who want cost-effective product ads at scale.",
+   overlayDescription: `
+Our AI UGC Video Generator creates engaging user-generated content (UGC) videos from just a product image. Perfect for brands that want relatable, social-media-friendly video ads without hiring creators.
+
+- • Upload only your product photo → get instant UGC-style promotional videos.
+- • Or upload a character/person photo → place your product in videos with real-looking characters for added authenticity.
+`,
+
     category: "AI Products",
     image: cardImage,
   },
@@ -26,8 +32,14 @@ const productsData = [
     title: "AI UGC Video Generator for Jewelry",
     description:
       "Showcase your jewelry in elegant, lifestyle-inspired UGC videos designed for brand storytelling.",
-    overlayDescription:
-      "Our Automated Product Videography tool transforms simple product photos into high-quality product photography and engaging promotional videos within minutes. No studio, no models, no expensive shoots – just upload a photo and get professional visuals ready for social media, e-commerce, and marketing campaigns. Perfect for businesses who want cost-effective product ads at scale.",
+   overlayDescription: `
+Our AI UGC Video Generator for Jewelry creates premium, high-quality videos that highlight your ornaments in the most authentic way.
+
+- • Upload your jewelry photos → get lifestyle-inspired videos with models wearing them.
+- • Choose from cultural, festive, or modern backgrounds.
+- • Perfect for Instagram reels, product launches, and digital campaigns.
+`,
+
     category: "Lorem 1",
     image: cardImage,
   },
@@ -89,7 +101,7 @@ const Products = () => {
             {filteredProducts.slice(0, 2).map((product, index) => (
               <div
                 key={index}
-                className="relative bg-[#55555547] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-lg w-[350px] md:w-[420px] md:h-[520px] cursor-pointer transition-transform duration-300 hover:scale-105"
+                className="relative bg-[#55555547] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-lg w-[350px] md:w-[450px] md:h-[520px] cursor-pointer transition-transform duration-300 hover:scale-105"
                 onMouseEnter={() => setActiveIndex(index)}
                 onMouseLeave={() => setActiveIndex(null)}
                 onClick={() =>
@@ -107,7 +119,7 @@ const Products = () => {
                     {product.title}
                   </h3>
                   <p className="text-gray-300 font-thin text-lg">
-                    {product.description.slice(0, 120)}...
+                    {product.description.slice(0, 150)}
                   </p>
                 </div>
 
@@ -122,9 +134,10 @@ const Products = () => {
                   <h3 className="text-xl font-bold mb-3 tracking-wide">
                     {product.title}
                   </h3>
-                  <p className="text-white/90 md:text-lg text-sm mb-6 leading-relaxed font-thin">
-                    {product.overlayDescription}
-                  </p>
+                  <div className="text-white/80 md:text-base text-sm mb-6 leading-relaxed font-thin tracking-wide p-2">
+                    <ReactMarkdown>{product.overlayDescription}</ReactMarkdown>
+                  </div>
+
                   <button className="bg-white text-[#194EFF] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition w-full bottom-0">
                     Explore Now
                   </button>
@@ -136,7 +149,7 @@ const Products = () => {
           {/* Center bottom card */}
           {filteredProducts[2] && (
             <div
-              className="relative bg-[#55555547] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-lg w-[350px] md:w-[420px] md:h-[520px] cursor-pointer transition-transform duration-300 hover:scale-102"
+              className="relative bg-[#55555547] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-lg w-[350px] md:w-[450px] md:h-[520px] cursor-pointer transition-transform duration-300 hover:scale-102"
               onMouseEnter={() => setActiveIndex(2)}
               onMouseLeave={() => setActiveIndex(null)}
               onClick={() => setActiveIndex(activeIndex === 2 ? null : 2)}
@@ -152,7 +165,7 @@ const Products = () => {
                   {filteredProducts[2].title}
                 </h3>
                 <p className="text-gray-300 text-lg">
-                  {filteredProducts[2].description.slice(0, 120)}...
+                  {filteredProducts[2].description.slice(0, 150)}
                 </p>
               </div>
 
@@ -167,9 +180,10 @@ const Products = () => {
                 <h3 className="text-xl font-bold mb-3 tracking-wide">
                   {filteredProducts[2].title}
                 </h3>
-                <p className="text-white/90 md:text-lg text-sm mb-6 leading-relaxed font-thin">
-                  {filteredProducts[2].overlayDescription}
-                </p>
+                <div className="text-white/90 md:text-base text-sm mb-6 leading-relaxed tracking-wide font-thin">
+                  <ReactMarkdown>{filteredProducts[2].overlayDescription}</ReactMarkdown>
+                </div>
+
                 <button className="bg-white text-[#194EFF] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 w-full bottom-0 transition">
                   Explore Now
                 </button>
