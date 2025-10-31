@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("home");
+  const [activeLink, setActiveLink] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+
+  // ✅ Automatically highlight Portfolio or Careers based on URL
+  useEffect(() => {
+    if (location.pathname === "/portfolio") {
+      setActiveLink("Portfolio");
+    } else if (location.pathname === "/career") {
+      setActiveLink("Careers");
+    } else {
+      setActiveLink("");
+    }
+  }, [location.pathname]);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -22,29 +33,44 @@ export default function Nav() {
     setActiveLink(link);
     setMenuOpen(false);
 
-    // If we are not on the home page
-    if (location.pathname !== "/") {
-      // Navigate to home first
-      navigate("/");
-
-      // Wait for the page to load, then scroll
+    // ✅ Scroll to top and reload cleanly for Portfolio & Careers
+    if (link === "Portfolio") {
+      window.scrollTo(0, 0);
+      navigate("/portfolio");
       setTimeout(() => {
-        if (link !== "Home") scrollToSection(link);
-      }, 500); // adjust delay if needed
-    } else {
-      // If already on home page, scroll directly
-      if (link === "Home") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        scrollToSection(link);
-      }
+        window.scrollTo(0, 0);
+        window.location.reload();
+      }, 100);
+      return;
     }
 
-    // Handle page routes
-    if (link === "Portfolio") {
-      navigate("/portfolio");
-    } else if (link === "Careers") {
+    if (link === "Careers") {
+      window.scrollTo(0, 0);
       navigate("/career");
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        window.location.reload();
+      }, 100);
+      return;
+    }
+
+    // ✅ Home
+    if (link === "Home") {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 300);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
+    // ✅ Internal sections (Services, About, Contact)
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => scrollToSection(link), 500);
+    } else {
+      scrollToSection(link);
     }
   };
 
@@ -59,7 +85,7 @@ export default function Nav() {
   return (
     <nav className="flex items-center justify-between px-6 pt-3 w-full">
       {/* Logo */}
-      <div className="flex items-center cursor-pointer" onClick={() => navigate("/")}>
+      <div className="flex items-center cursor-pointer">
         <img
           src={logo}
           alt="Logo"
@@ -76,7 +102,7 @@ export default function Nav() {
             className={`text-white font-medium transition px-4 py-2 rounded-full ${
               activeLink === link.id
                 ? "bg-[#4B4B4E5E] border border-[#5D5D5D]"
-                : "bg-transparent hover:bg-[#4B4B4E5E] hover:text-gray-300"
+                : "bg-transparent hover:bg-[#4B4B4E5E]"
             }`}
           >
             {link.name}
@@ -108,7 +134,7 @@ export default function Nav() {
               onClick={() => handleLinkClick(link.id)}
               className={`font-medium transition px-4 py-2 rounded-full bg-transparent ${
                 activeLink === link.id
-                  ? "text-[#194EFF] bg-transparent"
+                  ? "text-[#194EFF]"
                   : "text-gray-700 hover:text-[#194EFF]"
               }`}
             >

@@ -5,23 +5,47 @@ import bottomBg from "../assets/overlay.jpg";
 import Footer from "../components/Footer";
 import serviceImg from "../assets/service.jpg";
 import Nav from "../components/Nav";
+import { ArrowRight } from "lucide-react";
 
+// Active Jobs
 const activeJobs = [
-  { title: "UI/UX Designer", desc: "Learn how to create intuitive and visually appealing digital interfaces. This course covers user research, wireframing, prototyping, and usability testing using tools like Figma and Adobe XD." },
-  { title: "Flutter Developer", desc: "Build beautiful cross-platform mobile apps using Flutter and Dart. Master UI design, state management, Firebase integration, and deployment for both Android and iOS." },
-  { title: "Cyber Security", desc: "Gain practical knowledge in protecting networks, systems, and data from cyber threats. Learn ethical hacking, encryption, and incident response with hands-on labs and case studies." },
-  { title: "Back-end Developer", desc: "Develop robust server-side applications using Node.js, Express, and MongoDB. Understand RESTful APIs, authentication, and database management to power modern web applications." },
-  { title: "AI & Machine Learning", desc: "Master the foundations of Artificial Intelligence and Machine Learning using Python. Learn algorithms, neural networks, and real-world applications in image and text analysis." },
-  { title: "Front-End Developer", desc: "Learn to build responsive and interactive websites using HTML, CSS, JavaScript, and React. Get hands-on experience in UI design, animations, and API integration." },
+  {
+    title: "UI/UX Designer",
+    desc: "Learn how to create intuitive and visually appealing digital interfaces. This course covers user research, wireframing, prototyping, and usability testing using tools like Figma and Adobe XD.",
+    date: "25 - 10 - 2025",
+  },
+  {
+    title: "Flutter Developer",
+    desc: "Build beautiful cross-platform mobile apps using Flutter and Dart. Master UI design, state management, Firebase integration, and deployment for both Android and iOS.",
+    date: "22 - 10 - 2025",
+  },
+  {
+    title: "Cyber Security",
+    desc: "Gain practical knowledge in protecting networks, systems, and data from cyber threats. Learn ethical hacking, encryption, and incident response with hands-on labs and case studies.",
+    date: "18 - 10 - 2025",
+  },
+  {
+    title: "Back-end Developer",
+    desc: "Develop robust server-side applications using Node.js, Express, and MongoDB. Understand RESTful APIs, authentication, and database management to power modern web applications.",
+    date: "15 - 10 - 2025",
+  },
+  {
+    title: "AI & Machine Learning",
+    desc: "Master the foundations of Artificial Intelligence and Machine Learning using Python. Learn algorithms, neural networks, and real-world applications in image and text analysis.",
+    date: "10 - 10 - 2025",
+  },
+  {
+    title: "Front-End Developer",
+    desc: "Learn to build responsive and interactive websites using HTML, CSS, JavaScript, and React. Get hands-on experience in UI design, animations, and API integration.",
+    date: "05 - 10 - 2025",
+  },
 ];
 
+// Expired Jobs
 const expiredJobs = [
-  { title: "React Developer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
-  { title: "Data Analyst Intern", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
-  { title: "DevOps Engineer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
-  { title: "DevOps Engineer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
-  { title: "DevOps Engineer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
-  { title: "DevOps Engineer", desc: "The application window for this role is closed. Keep an eye on new opportunities." },
+  { title: "React Developer", desc: "The application window for this role is closed. Keep an eye on new opportunities.", date: "10 - 09 - 2025" },
+  { title: "Data Analyst Intern", desc: "The application window for this role is closed. Keep an eye on new opportunities.", date: "20 - 09 - 2025" },
+  { title: "DevOps Engineer", desc: "The application window for this role is closed. Keep an eye on new opportunities.", date: "01 - 09 - 2025" },
 ];
 
 const Careers = () => {
@@ -29,12 +53,26 @@ const Careers = () => {
   const [showForm, setShowForm] = useState(false);
   const [selectedJob, setSelectedJob] = useState("");
   const [filter, setFilter] = useState("active");
+  const [expandedCard, setExpandedCard] = useState(null); // overlay above card
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+  if (showForm || expandedCard !== null) {
+    document.body.style.overflow = "hidden"; // stop background scroll
+  } else {
+    document.body.style.overflow = "auto"; // enable again
+  }
+
+  return () => {
+    document.body.style.overflow = "auto"; // cleanup
+  };
+}, [showForm, expandedCard]);
+
 
   const handleApplyClick = (jobTitle) => {
     setSelectedJob(jobTitle);
@@ -55,7 +93,7 @@ const Careers = () => {
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
           scrolled
             ? "bg-[#010512D9] backdrop-blur-md shadow-md"
-            : "bg-[#010512D9] backdrop-blur-0"
+            : "bg-[#010512D9]"
         }`}
       >
         <Nav />
@@ -63,12 +101,12 @@ const Careers = () => {
 
       {/* Backgrounds */}
       <div
-        className="absolute top-4 md:top-0 left-0 w-full md:h-2/5 h-1/5 bg-contain bg-top bg-no-repeat object-top"
+        className="absolute top-4 md:top-0 left-0 w-full md:h-2/5 h-1/5 bg-contain bg-top bg-no-repeat"
         style={{ backgroundImage: `url(${topBg})` }}
       ></div>
 
       <div
-        className="absolute md:bottom-96 bottom-1/4 left-0 w-full md:h-1/4 h-1/3 bg-cover md:bg-contain bg-center opacity-30 my-14"
+        className="absolute md:bottom-96 bottom-1/4 left-0 w-full md:h-1/4 h-1/3 bg-cover opacity-30 my-14"
         style={{ backgroundImage: `url(${bottomBg})` }}
       ></div>
 
@@ -109,24 +147,49 @@ const Careers = () => {
               key={i}
               className="relative rounded-[35px] h-[360px] md:h-[380px] md:w-[380px] overflow-hidden p-3 border-[1px] border-[#001FD8] backdrop-blur-md hover:border-blue-400/50 hover:shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all duration-300"
             >
+              {/* Background layers */}
               <div className="absolute inset-0 bg-gradient-to-b from-[#194EFF] to-[#00041F]"></div>
               <img
                 src={serviceImg}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover opacity-20"
               />
+
+              {/* Card Content */}
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
                   <div className="flex flex-row">
-                  <div className="w-1.5 h-[52px] rounded-full bg-[#3564ff] top-16 mt-4 -left-20 -ml-3 overflow-visible"></div>
-                  <h3 className="text-[24px] font-semibold mb-4 m-2 pt-3 text-left tracking-wider px-2">
-                    {job.title}
-                  </h3></div>
-                  <p className="text-gray-300 md:text-lg text-base leading-relaxed m-2 font-thin">
+                    <div className="w-1.5 h-[52px] rounded-full bg-[#3564ff] mt-4 -ml-3"></div>
+                    <h3 className="text-[24px] font-semibold mb-4 m-2 pt-3 text-left tracking-wider px-2">
+                      {job.title}
+                    </h3>
+                  </div>
+
+                  {/* Description limit */}
+                  <p className="text-gray-300 md:text-lg text-base leading-relaxed m-2 font-thin line-clamp-3">
                     {job.desc}
+                  </p>
+
+                  {/* Arrow Button instead of Read More */}
+                  {job.desc.length > 130 && (
+                    <button
+                      onClick={() =>
+                        setExpandedCard(expandedCard === i ? null : i)
+                      }
+                      className="text-blue-400 mt-1 ml-60 hover:scale-110 transition-transform"
+                    >
+                      <ArrowRight className="w-5 h-5" />
+                    </button>
+                  )}
+
+                  {/* Posted Date */}
+                  <p className="text-gray-400 text-sm ml-2 mt-3">
+                    <span className="font-medium text-gray-300">Posted Date:</span>{" "}
+                    {job.date}
                   </p>
                 </div>
 
+                {/* Apply Button */}
                 {filter === "active" && (
                   <div className="m-2 p-1">
                     <button
@@ -149,28 +212,53 @@ const Careers = () => {
                   </div>
                 )}
               </div>
+
+              {/* Overlay directly above card */}
+              {expandedCard === i && (
+                <div className="absolute inset-0 bg-black/90 backdrop-blur-md rounded-[35px] z-20 p-6 flex flex-col justify-center transition-all duration-300">
+                  <h3 className="text-2xl font-semibold mb-3">{job.title}</h3>
+                  <p className="text-gray-300 text-sm mb-3 italic">
+                    Posted Date: {job.date}
+                  </p>
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed overflow-y-auto scrollbar-hide">
+                    {job.desc}
+                  </p>
+                  <button
+                    onClick={() => setExpandedCard(null)}
+                    className="absolute top-4 right-4 text-white text-lg hover:text-red-400"
+                  >
+                    ✕
+                  </button>
+                </div>
+              )}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Popup Form */}
-{/* Popup Form */}
+      {/* Apply Form */}
 {showForm && (
-  <div className="absolute inset-0 z-50 bg-[#00000099] flex justify-center items-start overflow-y-auto py-10 px-4">
-    <div className="relative bg-[#0000003D] backdrop-blur-2xl border border-blue-700 rounded-[30px] p-6 md:p-10 w-full sm:w-[90%] max-w-4xl shadow-[0_0_25px_rgba(56,189,248,0.3)] transition-all duration-300 ease-out mt-20">
+  <div className="fixed inset-0 z-50 bg-[#00000099] flex justify-center items-center overflow-hidden">
+    <div className="relative bg-[#0000003D] backdrop-blur-2xl my-8 border border-blue-700 rounded-[35px] py-4 w-full sm:w-[90%] max-w-4xl h-5/6 shadow-[0_0_25px_rgba(56,189,248,0.3)] transition-all duration-300 ease-out overflow-y-auto scrollbar-hide p-6 md:p-10">
+      
+      {/* Close Button */}
+      <button
+        onClick={closeForm}
+        className="absolute top-6 right-8 text-white font-semibold text-xl hover:text-red-500 z-50"
+      >
+        ✕
+      </button>
 
-      {/* Dynamic Heading */}
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 leading-snug mt-3">
-        Fill the Application for{" "}
-        <span className="text-blue-400">{selectedJob}</span>
+      {/* Heading */}
+      <h2 className="text-2xl md:text-[46px] font-bold text-center mb-2 leading-snug mt-10">
+        Fill the Details
       </h2>
-      <p className="text-center text-gray-400 mb-8 text-sm md:text-base">
+      <p className="text-center text-white mb-8 text-sm md:text-xl">
         Fill the details below
       </p>
 
-      {/* Responsive Form */}
-      <form className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-left">
+      {/* Form */}
+      <form className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-left pb-10">
         <div>
           <label className="block mb-2 text-sm">Full Name</label>
           <input
@@ -235,7 +323,9 @@ const Careers = () => {
             type="file"
             className="w-full text-sm text-gray-400 border border-[#FFFFFF73] rounded-md cursor-pointer file:bg-blue-700 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-md"
           />
-          <p className="text-xs text-gray-500 mt-1">File must be PDF or image</p>
+          <p className="text-xs text-gray-500 mt-1">
+            File must be PDF or image
+          </p>
         </div>
 
         <div>
@@ -274,13 +364,6 @@ const Careers = () => {
           </button>
         </div>
       </form>
-
-      <button
-        onClick={closeForm}
-        className="absolute top-4 right-6 text-white text-xl hover:text-red-500"
-      >
-        ✕
-      </button>
     </div>
   </div>
 )}

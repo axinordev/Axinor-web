@@ -11,33 +11,30 @@ export default function Footer() {
       className="text-white pt-12 pb-6 px-6 md:px-12"
       style={{
         background:
-          "linear-gradient(90deg, #001072, #001072, #00169B,#00169B, #001FD8, #001FD8)",
+          "linear-gradient(90deg, #000B55 0%, #001072 40%, #00169B 70%, #001FD8 100%)",
       }}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-[#001FD8] pb-8">
+      <div className=" mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-[#0036F0]/30 pb-10">
         {/* Left Section - Logo & Description */}
         <div className="flex flex-col items-start">
           <img
             src={logo}
             alt="AXINOR Technologies"
-            className="w-64 h-auto object-contain mb-4 -ml-4"
+            className="w-72 h-auto object-contain mb-6 -ml-6"
           />
-          <p className="md:text-base text-sm text-white leading-relaxed px-2">
+          <p className="text-sm md:text-base text-gray-200 leading-relaxed pl-2">
             AXINOR blends creativity, strategy, and technology to craft impactful
             solutions that help brands grow and connect with their audience.
           </p>
         </div>
 
         {/* Middle Section - Important Links */}
-        <div className="grid grid-cols-2 gap-x-6">
-          <div className="col-span-2">
-            <h3 className="font-semibold text-white md:text-xl text-lg tracking-wider mb-8 md:mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-x-6 ml-2">
+          <div>
+            <h3 className="text-white text-xl mb-6">
               Important Links
             </h3>
-          </div>
-
-          <div>
-            <ul className="space-y-3 md:text-base text-sm -mt-5 text-gray-200">
+            <ul className="space-y-6 text-gray-300">
               {[
                 { name: "Home", link: "#" },
                 { name: "About Us", link: "#About" },
@@ -46,22 +43,18 @@ export default function Footer() {
               ].map((item) => (
                 <li
                   key={item.name}
-                  className="hover:text-white transition flex items-center gap-2 cursor-pointer"
+                  className="flex items-center gap-3 hover:text-white transition"
                 >
-                  <TbRectangleVerticalFilled className="w-3 h-3 text-white" />
-                  <a
-                    href={item.link}
-                    className="hover:underline"
-                  >
-                    {item.name}
-                  </a>
+                  <TbRectangleVerticalFilled className="text-white" />
+                  <a href={item.link}>{item.name}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <ul className="space-y-3 md:text-base text-sm -mt-5 -ml-5 text-gray-200">
+            <h3 className="opacity-0 mb-6 select-none">Placeholder</h3>
+            <ul className="space-y-6 text-gray-300 -ml-7">
               {[
                 "Design & Development",
                 "Research & Innovation",
@@ -70,9 +63,9 @@ export default function Footer() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="hover:text-white transition flex items-center gap-2"
+                  className="flex items-center gap-3 hover:text-white transition"
                 >
-                  <TbRectangleVerticalFilled className="w-3 h-3 text-white" />
+                  <TbRectangleVerticalFilled className="text-white" />
                   {item}
                 </li>
               ))}
@@ -80,22 +73,21 @@ export default function Footer() {
           </div>
         </div>
 
-
         {/* Right Section - Contact Info */}
-        <div>
-          <h3 className="font-semibold mb-4 text-white md:text-lg text-base">Contact Us</h3>
-          <ul className="space-y-4 text-sm md:text-base text-gray-200">
-            <li className="flex items-start gap-3 border-b border-[#194EFF] py-3">
-              <IoMdMail className="w-5 h-5 mt-1 text-white" />
+        <div className="ml-10 mr-16">
+          <h3 className="text-white text-xl mb-6">Contact Us</h3>
+          <ul className="space-y-5 text-gray-300">
+            <li className="flex items-start gap-3 border-b border-t border-[#194EFF] pb-4 pt-3">
+              <IoMdMail className="text-white w-6 h-6" />
               <span>aixinortechnologies@gmail.com</span>
             </li>
-            <li className="flex items-start gap-3 border-b border-[#194EFF] py-3">
-              <FaPhoneAlt className="w-5 h-5 mt-1 text-white" />
+            <li className="flex items-start gap-3 border-b border-[#194EFF] pb-4">
+              <FaPhoneAlt className="text-white mt-1 w-5 h-5" />
               <span>+91 97465 77647, +91 94461 86026</span>
             </li>
-            <li className="flex items-start gap-3 py-3 pr-10">
-              <FaLocationDot className="w-6 h-6 mt-1 text-white" />
-              <span className="text-sm md:text-base">
+            <li className="flex items-start gap-3">
+              <FaLocationDot className="text-white mt-1 w-10 h-10" />
+              <span className="text-sm md:text-base leading-relaxed">
                 HiLITE Business Park - Tower 2, 7th floor (MPM-X205), Poovangal,
                 Kozhikode, Pantheerankavu, Kerala 673014
               </span>
@@ -104,10 +96,10 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Section - Copyright */}
-      <div className="text-center mt-6 md:text-base text-sm text-gray-200">
+      {/* Bottom Section */}
+      <div className="text-center mt-6 text-gray-300 text-sm md:text-base">
         Copyright ©2025 All rights reserved |{" "}
-        <span className="font-medium">AXINOR TECHNOLOGIES</span>
+        <span className="font-medium text-white">AXINOR TECHNOLOGIES</span>
       </div>
     </footer>
   );

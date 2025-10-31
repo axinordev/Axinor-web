@@ -1,29 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.svg";
-import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("home");
-  const navigate = useNavigate(); // ✅ Initialize navigation
+  const [activeLink, setActiveLink] = useState("Home");
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setActiveLink("Home");
+    } else if (location.pathname === "/portfolio") {
+      setActiveLink("Portfolio");
+    } else if (location.pathname === "/career") {
+      setActiveLink("Careers");
+    }
+  }, [location.pathname]);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
     setMenuOpen(false);
 
-    // ✅ Navigate to pages or scroll
     if (link === "Portfolio") {
       navigate("/portfolio");
+      // ✅ Scroll to top before reloading
+      window.scrollTo(0, 0);
+      setTimeout(() => window.location.reload(), 100); 
     } else if (link === "Careers") {
       navigate("/career");
-    } else if (link === "Home"){
-        navigate("/")
-    }
-    else {
-      // For in-page links like #services, #about, etc.
+      // ✅ Scroll to top before reloading
+      window.scrollTo(0, 0);
+      setTimeout(() => window.location.reload(), 100);
+    } else if (link === "Home") {
+      navigate("/");
+      window.scrollTo(0, 0);
+    } else {
       const section = document.getElementById(link);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -42,7 +57,10 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between px-6 pt-3 w-full">
       {/* Left: Logo */}
-      <div className="flex items-center cursor-pointer" onClick={() => navigate("/")}>
+      <div
+        className="flex items-center cursor-pointer"
+        onClick={() => handleLinkClick("Home")}
+      >
         <img
           src={logo}
           alt="Logo"
@@ -59,7 +77,7 @@ export default function Navbar() {
             className={`text-white font-medium transition px-4 py-2 rounded-full ${
               activeLink === link.id
                 ? "bg-[#4B4B4E5E] border border-[#5D5D5D]"
-                : "bg-transparent hover:bg-[#4B4B4E5E] hover:text-gray-300"
+                : "bg-transparent hover:bg-[#4B4B4E5E] hover:border hover:border-[#5D5D5D]"
             }`}
           >
             {link.name}
@@ -99,8 +117,7 @@ export default function Navbar() {
             </button>
           ))}
 
-          <button 
-          className="bg-[#194EFF] text-white px-6 py-2 rounded-full hover:bg-[#0d2b8f] transition mt-4">
+          <button className="bg-[#194EFF] text-white px-6 py-2 rounded-full hover:bg-[#0d2b8f] transition mt-4">
             <a href="#contact">Contact Us</a>
           </button>
         </div>

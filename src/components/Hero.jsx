@@ -37,9 +37,9 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="relative z-10 px-6 md:px-0 bg-transparent mt-36 md:mt-40">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold drop-shadow-lg tracking-wide">
-          <span className="block md:leading-[90px] leading-[40px]">Small Details Make</span>
-          <span className="block md:leading-[90px] leading-[40px]">A Big Impression</span>
+        <h1 className="text-3xl sm:text-4xl md:text-[64px] font-bold drop-shadow-lg tracking-wide ">
+          <span className="block md:leading-[80px] leading-[40px]">Small Details Make</span>
+          <span className="block md:leading-[80px] leading-[40px]">A Big Impression</span>
         </h1>
 
         <p className="mt-3 text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-thin tracking-wide leading-relaxed md:leading-loose">

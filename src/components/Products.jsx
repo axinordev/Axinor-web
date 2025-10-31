@@ -87,7 +87,7 @@ const Products = () => {
                 selectedCategory === cat
                   ? "bg-[#194EFF] text-white border-[#194EFF]"
                   : "bg-transparent text-[#194EFF] border-[#194EFF]"
-              } hover:bg-[#194EFF] transition`}
+              } hover:bg-[#194EFF] hover:text-white transition`}
             >
               {cat}
             </button>
@@ -180,7 +180,7 @@ const Products = () => {
                 <h3 className="text-xl font-bold mb-3 tracking-wide">
                   {filteredProducts[2].title}
                 </h3>
-                <div className="text-white/90 md:text-base text-sm mb-6 leading-relaxed tracking-wide font-thin">
+                <div className="text-white/90 md:text-base text-sm mb-6 leading-relaxed tracking-wide font-thin p-2">
                   <ReactMarkdown>{filteredProducts[2].overlayDescription}</ReactMarkdown>
                 </div>
 
