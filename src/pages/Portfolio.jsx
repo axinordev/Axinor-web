@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import topBg from "../assets/portfolio.png";
-import bottomBg from "../assets/overlay.jpg";
+import bottomBg from "../assets/career.png";
 import Footer from "../components/Footer";
 
 // 💡 Import your card images (replace these with actual image names in /assets)
@@ -75,7 +75,7 @@ const Portfolio = () => {
       ></div>
 
       <div
-        className="absolute md:bottom-96 bottom-1/4 left-0 w-full md:h-1/4 h-1/3 bg-cover md:bg-contain bg-center opacity-30 my-14"
+        className="absolute md:bottom-[444px] bottom-1/4 left-0 w-full md:h-1/2 h-1/3 bg-cover bg-top object-top z-0 "
         style={{ backgroundImage: `url(${bottomBg})` }}
       ></div>
 
@@ -97,13 +97,13 @@ const Portfolio = () => {
                 <img
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-3/5 p-3 object-cover rounded-[35px] transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-4/5 p-3 object-cover rounded-[35px] transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#010512] via-transparent to-transparent opacity-60"></div>
+                <div className="absolute inset-0 bg-transparent opacity-60"></div>
               </div>
 
               {/* Info Section */}
-              <div className="backdrop-blur-xl bg-[#010512]/60 rounded-b-[30px] p-6 text-left">
+              <div className="backdrop-blur-xl bg-transparent rounded-b-[30px] p-6 text-left">
                 <h3 className="text-[22px] font-semibold text-white mb-2 tracking-wide">
                   {project.title}
                 </h3>
