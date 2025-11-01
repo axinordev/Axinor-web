@@ -128,7 +128,7 @@ const Careers = () => {
         style={{ backgroundImage: `url(${topBg})` }}
       ></div>
       <div
-        className="absolute md:bottom-[418px] bottom-1/4 left-0 w-full md:h-1/2 h-1/3 bg-cover object-top opacity-70 my-14"
+        className="absolute md:bottom-[400px] bottom-1/4 left-0 w-full md:h-1/2 h-1/3 bg-cover object-top opacity-70 my-14 -z-10"
         style={{ backgroundImage: `url(${bottomBg})` }}
       ></div>
 

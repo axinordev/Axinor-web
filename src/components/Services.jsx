@@ -96,7 +96,7 @@ export default function Services() {
         </div>
 
         {/* Service Cards */}
-        <div className="relative z-10 grid gap-8 sm:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto">
+        <div className="relative z-10 grid gap-10 sm:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <div
               key={index}

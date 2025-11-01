@@ -64,7 +64,7 @@ export default function Navbar() {
         <img
           src={logo}
           alt="Logo"
-          className="md:h-20 h-16 w-auto md:ml-6 ml-0"
+          className="md:h-20 h-16 w-auto md:ml-8 ml-0"
         />
       </div>
 

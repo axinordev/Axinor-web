@@ -14,7 +14,7 @@ export default function Footer() {
           "linear-gradient(90deg, #000B55 0%, #001072 40%, #00169B 70%, #001FD8 100%)",
       }}
     >
-      <div className=" mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-[#0036F0]/30 pb-10">
+      <div className=" mx-auto grid grid-cols-1 md:grig-cols-2 lg:grid-cols-3 gap-8 border-b border-[#0036F0]/30 pb-10">
         {/* Left Section - Logo & Description */}
         <div className="flex flex-col items-start -pr-4 md:w-[100%] text-justify">
           <img
@@ -34,7 +34,7 @@ export default function Footer() {
             <h3 className="text-white md:text-[20px] md:tracking-wide font-medium mb-6">
               Important Links
             </h3>
-            <ul className="space-y-6 text-lg text-gray-300">
+            <ul className="space-y-6 md:text-lg text-gray-300">
               {[
                 { name: "Home", link: "#" },
                 { name: "About Us", link: "#About" },
@@ -54,7 +54,7 @@ export default function Footer() {
 
           <div>
             <h3 className="opacity-0 mb-6 select-none mt-1">Placeholder</h3>
-            <ul className="space-y-6 text-lg text-gray-300 -ml-16 md:-ml-8 md:-mr-10">
+            <ul className="space-y-6 md:text-lg text-gray-300 -ml-16 md:-ml-8 md:-mr-10">
               {[
                 "Design & Development",
                 "Research & Innovation",

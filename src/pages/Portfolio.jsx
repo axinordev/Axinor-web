@@ -5,9 +5,9 @@ import bottomBg from "../assets/career.png";
 import Footer from "../components/Footer";
 
 // 💡 Import your card images (replace these with actual image names in /assets)
-import img1 from "../assets/card.jpg";
-import img2 from "../assets/card.jpg";
-import img3 from "../assets/card.jpg";
+import img1 from "../assets/portfolio/cashew1.png";
+import img2 from "../assets/portfolio/cart.png";
+import img3 from "../assets/portfolio/interior.png";
 import img4 from "../assets/card.jpg";
 import img5 from "../assets/card.jpg";
 import img6 from "../assets/card.jpg";
@@ -15,17 +15,17 @@ import Nav from "../components/Nav";
 
 const projects = [
   {
-    title: "Insurva",
+    title: "Cashewcorporation",
     desc: "A modern insurance management system with AI-based claim tracking and analytics.",
     img: img1,
   },
   {
-    title: "Insurva",
+    title: "Cashewcart",
     desc: "A modern insurance management system with AI-based claim tracking and analytics.",
     img: img2,
   },
   {
-    title: "Insurva",
+    title: "Rethna Interiors",
     desc: "A modern insurance management system with AI-based claim tracking and analytics.",
     img: img3,
   },
@@ -75,7 +75,7 @@ const Portfolio = () => {
       ></div>
 
       <div
-        className="absolute md:bottom-[459px] bottom-0 left-0 w-full md:h-1/2 h-2/3 bg-cover bg-top object-top z-0 "
+        className="absolute md:bottom-3/6 bottom-0 left-0 w-full md:h-2/3 h-2/3 bg-cover bg-top object-top -z-10"
         style={{ backgroundImage: `url(${bottomBg})` }}
       ></div>
 
@@ -93,11 +93,11 @@ const Portfolio = () => {
               className="relative rounded-[30px] overflow-hidden bg-[#55555547] hover:border-[#194fff6c] transition-all duration-300 hover:shadow-[0_0_20px_rgba(25,78,255,0.4)] group"
             >
               {/* Image Section */}
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden bg-transparent">
                 <img
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-4/5 p-3 object-cover rounded-[35px] transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-4/5 p-3 object-contain rounded-[35px] transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-transparent opacity-60"></div>
               </div>
@@ -115,8 +115,10 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-
-      <Footer />
+          <div className="z-10">
+            <Footer />
+          </div>
+      
     </div>
   );
 };

@@ -23,7 +23,7 @@ export default function Contact() {
       </div>
 
       {/* Form + Map */}
-      <div className="w-full max-w-6xl bg-[#0B112A] rounded-2xl shadow-lg grid md:grid-cols-2 overflow-hidden">
+      <div className="w-full max-w-5xl bg-[#0B112A] rounded-2xl shadow-lg grid md:grid-cols-2 overflow-hidden">
         {/* Left: Contact Form */}
         <div className="p-8 md:p-10 flex flex-col justify-center px-6">
           <h3 className="text-2xl font-semibold mb-4 md:text-[30px] tracking-wide px-8 py-2 ">Let's connect with us</h3>
@@ -92,7 +92,7 @@ export default function Contact() {
       </div>
 
       {/* Contact Info */}
-      <div className="mt-10 w-full max-w-6xl flex flex-col md:flex-row justify-between items-center bg-[#0B112A] px-4 py-1 rounded-xl">
+      <div className="mt-10 w-full max-w-5xl flex flex-col md:flex-row justify-between items-center bg-[#0B112A] px-4 py-1 rounded-xl">
         <div className="flex items-center md:gap-3 gap-5 md:border md:border-r-[#001FD8] border-transparent px-12 pr-10">
           <img src={phoneIcon} alt="Phone" className="md:-mt-8 md:w-9 md:h-9" />
           <div className="mt-2 md:mt-0 -pr-8">
