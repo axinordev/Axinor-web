@@ -14,27 +14,27 @@ export default function Footer() {
           "linear-gradient(90deg, #000B55 0%, #001072 40%, #00169B 70%, #001FD8 100%)",
       }}
     >
-      <div className=" mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-[#0036F0]/30 pb-10">
+      <div className=" mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-[#0036F0]/30 pb-10">
         {/* Left Section - Logo & Description */}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start -pr-4 md:w-[100%] text-justify">
           <img
             src={logo}
             alt="AXINOR Technologies"
-            className="w-72 h-auto object-contain mb-6 -ml-6"
+            className="w-72 h-auto object-contain mb-6 md:-ml-6"
           />
-          <p className="text-sm md:text-base text-gray-200 leading-relaxed pl-2">
+          <p className="text-sm md:text-lg font-extralight text-gray-200 leading-relaxed pl-2">
             AXINOR blends creativity, strategy, and technology to craft impactful
             solutions that help brands grow and connect with their audience.
           </p>
         </div>
 
         {/* Middle Section - Important Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-x-6 ml-2">
+        <div className="grid grid-cols-2 md:grid-cols-2  gap-x-6 md:ml-6">
           <div>
-            <h3 className="text-white text-xl mb-6">
+            <h3 className="text-white md:text-[20px] md:tracking-wide font-medium mb-6">
               Important Links
             </h3>
-            <ul className="space-y-6 text-gray-300">
+            <ul className="space-y-6 text-lg text-gray-300">
               {[
                 { name: "Home", link: "#" },
                 { name: "About Us", link: "#About" },
@@ -45,7 +45,7 @@ export default function Footer() {
                   key={item.name}
                   className="flex items-center gap-3 hover:text-white transition"
                 >
-                  <TbRectangleVerticalFilled className="text-white" />
+                  <TbRectangleVerticalFilled className="text-white w-4 h-5" />
                   <a href={item.link}>{item.name}</a>
                 </li>
               ))}
@@ -53,8 +53,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="opacity-0 mb-6 select-none">Placeholder</h3>
-            <ul className="space-y-6 text-gray-300 -ml-7">
+            <h3 className="opacity-0 mb-6 select-none mt-1">Placeholder</h3>
+            <ul className="space-y-6 text-lg text-gray-300 -ml-16 md:-ml-8 md:-mr-10">
               {[
                 "Design & Development",
                 "Research & Innovation",
@@ -65,7 +65,7 @@ export default function Footer() {
                   key={item}
                   className="flex items-center gap-3 hover:text-white transition"
                 >
-                  <TbRectangleVerticalFilled className="text-white" />
+                  <TbRectangleVerticalFilled className="text-white w-4 h-5" />
                   {item}
                 </li>
               ))}
@@ -74,20 +74,20 @@ export default function Footer() {
         </div>
 
         {/* Right Section - Contact Info */}
-        <div className="ml-10 mr-16">
-          <h3 className="text-white text-xl mb-6">Contact Us</h3>
-          <ul className="space-y-5 text-gray-300">
-            <li className="flex items-start gap-3 border-b border-t border-[#194EFF] pb-4 pt-3">
+        <div className="md:ml-10 mr-12">
+          <h3 className="text-white md:text-[20px] md:tracking-wide font-medium mb-6">Contact Us</h3>
+          <ul className="space-y-5 text-gray-300 ">
+            <li className="flex items-start gap-3 border-b border-t border-[#194EFF] pb-4 pt-3 md:text-lg">
               <IoMdMail className="text-white w-6 h-6" />
               <span>aixinortechnologies@gmail.com</span>
             </li>
-            <li className="flex items-start gap-3 border-b border-[#194EFF] pb-4">
+            <li className="flex items-start gap-3 border-b border-[#194EFF] pb-4 md:text-lg">
               <FaPhoneAlt className="text-white mt-1 w-5 h-5" />
-              <span>+91 97465 77647, +91 94461 86026</span>
+              <span className="tracking-tighter">+91 97465 77647, +91 94461 86026</span>
             </li>
-            <li className="flex items-start gap-3">
+            <li className="flex items-start gap-3 md:text-lg">
               <FaLocationDot className="text-white mt-1 w-10 h-10" />
-              <span className="text-sm md:text-base leading-relaxed">
+              <span className="text-sm md:text-lg leading-relaxed ">
                 HiLITE Business Park - Tower 2, 7th floor (MPM-X205), Poovangal,
                 Kozhikode, Pantheerankavu, Kerala 673014
               </span>
@@ -97,9 +97,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="text-center mt-6 text-gray-300 text-sm md:text-base">
+      <div className="text-center mt-6 text-white text-sm md:text-lg">
         Copyright ©2025 All rights reserved |{" "}
-        <span className="font-medium text-white">AXINOR TECHNOLOGIES</span>
+        <span className=" text-white">AXINOR TECHNOLOGIES</span>
       </div>
     </footer>
   );

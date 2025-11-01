@@ -74,7 +74,7 @@ export default function Navbar() {
           <button
             key={link.id}
             onClick={() => handleLinkClick(link.id)}
-            className={`text-white font-medium transition px-4 py-2 rounded-full ${
+            className={`text-white transition px-4 py-2 rounded-full ${
               activeLink === link.id
                 ? "bg-[#4B4B4E5E] border border-[#5D5D5D]"
                 : "bg-transparent hover:bg-[#4B4B4E5E] hover:border hover:border-[#5D5D5D]"

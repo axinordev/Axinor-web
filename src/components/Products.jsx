@@ -74,11 +74,11 @@ const Products = () => {
 
       <div className="max-w-6xl mx-auto text-center relative z-10">
         {/* Heading */}
-        <h2 className="text-xl text-[#194EFF] mb-6">PRODUCTS</h2>
-        <h1 className="text-4xl font-bold mb-12">Explore Our Innovations</h1>
+        <h2 className="text-xl text-[#194EFF] md:text-[26px] t mb-6">Products</h2>
+        <h1 className="text-4xl md:text-[44px] font-gilroy tracking-wider font-bold mb-20">Explore Our Innovations</h1>
 
         {/* Category Buttons */}
-        <div className="flex flex-wrap justify-center gap-10 sm:gap-6 mb-12">
+        <div className="flex flex-wrap justify-center gap-10 sm:gap-6 mb-16">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -115,7 +115,7 @@ const Products = () => {
                 />
 
                 <div className="p-5 text-left">
-                  <h3 className="text-xl font-semibold mb-2 tracking-wide">
+                  <h3 className="text-xl md:text-[24px] font-semibold mb-2 tracking-wide">
                     {product.title}
                   </h3>
                   <p className="text-gray-300 font-thin text-lg">
@@ -131,16 +131,18 @@ const Products = () => {
                       : "opacity-0 translate-y-2 pointer-events-none"
                   }`}
                 >
-                  <h3 className="text-xl font-bold mb-3 tracking-wide">
+                  <h3 className="text-xl md:text-[24px] font-semibold mb-3 tracking-wide">
                     {product.title}
                   </h3>
-                  <div className="text-white/80 md:text-base text-sm mb-6 leading-relaxed font-thin tracking-wide p-2">
+                  <div className="text-white md:text-lg text-sm mb-6 leading-relaxed font-thin tracking-wider p-2">
                     <ReactMarkdown>{product.overlayDescription}</ReactMarkdown>
                   </div>
 
-                  <button className="bg-white text-[#194EFF] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition w-full bottom-0">
-                    Explore Now
-                  </button>
+                  <div className="absolute bottom-6 left-0 w-full px-6">
+                    <button className="bg-white text-[#194EFF] px-6 py-3 w-full rounded-full font-semibold hover:bg-gray-100 transition">
+                      Explore Now
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -149,7 +151,7 @@ const Products = () => {
           {/* Center bottom card */}
           {filteredProducts[2] && (
             <div
-              className="relative bg-[#55555547] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-lg w-[350px] md:w-[450px] md:h-[520px] cursor-pointer transition-transform duration-300 hover:scale-102"
+              className="relative bg-[#55555547] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-lg w-[350px] md:w-[450px] md:h-[520px] cursor-pointer transition-transform duration-300 hover:scale-105"
               onMouseEnter={() => setActiveIndex(2)}
               onMouseLeave={() => setActiveIndex(null)}
               onClick={() => setActiveIndex(activeIndex === 2 ? null : 2)}
@@ -160,8 +162,8 @@ const Products = () => {
                 className="w-full h-2/3 p-2 object-cover rounded-3xl"
               />
 
-              <div className="p-5 text-left">
-                <h3 className="text-xl font-semibold mb-2 tracking-wide">
+              <div className="p-5 text-left py-3">
+                <h3 className="text-xl md:text-[24px] font-semibold mb-2 tracking-wide">
                   {filteredProducts[2].title}
                 </h3>
                 <p className="text-gray-300 text-lg">
@@ -177,16 +179,18 @@ const Products = () => {
                     : "opacity-0 translate-y-2 pointer-events-none"
                 }`}
               >
-                <h3 className="text-xl font-bold mb-3 tracking-wide">
+                <h3 className="text-xl font-semibold md:text-[24px] mb-3 tracking-wide">
                   {filteredProducts[2].title}
                 </h3>
-                <div className="text-white/90 md:text-base text-sm mb-6 leading-relaxed tracking-wide font-thin p-2">
+                <div className="text-white md:text-lg text-sm mb-6 leading-relaxed tracking-wider font-regular p-2">
                   <ReactMarkdown>{filteredProducts[2].overlayDescription}</ReactMarkdown>
                 </div>
 
-                <button className="bg-white text-[#194EFF] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 w-full bottom-0 transition">
-                  Explore Now
-                </button>
+                <div className="absolute bottom-6 left-0 w-full px-6">
+                  <button className="bg-white text-[#194EFF] px-6 py-3 w-full rounded-full font-semibold hover:bg-gray-100 transition">
+                    Explore Now
+                  </button>
+                </div>
               </div>
             </div>
           )}

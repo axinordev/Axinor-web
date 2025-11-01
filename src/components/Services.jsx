@@ -51,18 +51,18 @@ export default function Services() {
   const moonStyle = {
     position: "fixed",
     top: "10%", // start higher
-    right: "-45%", // start further right
+    right: "-55%", // start further right
     width:"40%",
     transform: `translate(-${scrollProgress * 135}vw, -${scrollProgress * 20}vh) rotate(${scrollProgress * 360}deg)`,
     opacity:
       scrollProgress < 0.1
         ? 0
         : scrollProgress < 1
-        ? Math.min(0.6, scrollProgress + 0.05)
+        ? Math.min(0.4, scrollProgress + 0.002)
         : 0, // fade out gradually after leaving section
     pointerEvents: "none",
     zIndex: 1,
-    transition: "transform 0.1s linear, opacity 0.3s ease-in-out",
+    transition: "opacity 0.4s ease-out",
     filter: "drop-shadow(0 0 30px rgba(255,255,255,0.15))",
   };
 
@@ -86,11 +86,11 @@ export default function Services() {
           }}
         />
 
-        <div className="text-center mb-12 relative z-10">
-          <p className="text-[#194EFF] uppercase tracking-wide text-xl font-medium">
+        <div className="text-center mb-24 relative z-10">
+          <p className="text-[#194EFF] tracking-wide text-xl md:text-[26px] mb-6">
             Services
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mt-4 leading-snug tracking-wide">
+          <h2 className="text-3xl font-gilroy md:text-[44px] font-bold mt-4 leading-snug tracking-wide">
             We Are Digital Agency
           </h2>
         </div>
@@ -119,10 +119,10 @@ export default function Services() {
                     />
                   </div>
                 </div>
-                <h3 className="text-[24px] font-semibold mb-3 my-2 tracking-wider px-2">
+                <h3 className="text-[26px] font-bold mb-3 my-2 tracking-wider px-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-300 text-lg leading-relaxed m-2 font-thin">
+                <p className="text-gray-300 text-lg md:text-[17px] leading-relaxed tracking-wide m-2 font-thin">
                   {service.desc}
                 </p>
               </div>

@@ -47,7 +47,7 @@ const Home = () => {
         className="absolute top-0 left-0 w-full object-contain z-0 object-top"
         style={{ height: "170vh" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent md:h-1/5 h-1/6"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-transparent md:h-1/5 h-1/6"></div>
       <img
         src={overlayImage}
         alt="Overlay"

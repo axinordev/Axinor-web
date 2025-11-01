@@ -56,7 +56,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen text-white overflow-hidden md:pt-20">
+    <div className="relative min-h-screen text-white overflow-hidden md:pt-20 -pb-2">
       {/* Navbar */}
       <div
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
@@ -75,13 +75,13 @@ const Portfolio = () => {
       ></div>
 
       <div
-        className="absolute md:bottom-[444px] bottom-1/4 left-0 w-full md:h-1/2 h-1/3 bg-cover bg-top object-top z-0 "
+        className="absolute md:bottom-[459px] bottom-0 left-0 w-full md:h-1/2 h-2/3 bg-cover bg-top object-top z-0 "
         style={{ backgroundImage: `url(${bottomBg})` }}
       ></div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center">
-        <h1 className="text-[50px] md:text-[100px] font-extrabold mb-20 md:pb-40 pb-10 md:mt-10 mt-20 tracking-wider">
+        <h1 className="text-[50px] font-gilroy md:text-[120px] font-bold mb-20 md:pb-40 pb-10 md:mt-10 mt-20 tracking-wide">
           Our Portfolio
         </h1>
 
@@ -104,10 +104,10 @@ const Portfolio = () => {
 
               {/* Info Section */}
               <div className="backdrop-blur-xl bg-transparent rounded-b-[30px] p-6 text-left">
-                <h3 className="text-[22px] font-semibold text-white mb-2 tracking-wide">
+                <h3 className="text-[22px] md:text-[24px] font-semibold text-white mb-2 tracking-wide">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-300 text-sm md:text-lg leading-relaxed">
                   {project.desc}
                 </p>
               </div>

@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import aboutImage from "../assets/seven.png";
-import moonImage from "../assets/moon.png";
 import decorativeImage from "../assets/about-bottom.png";
 
 export default function AboutSection() {
@@ -56,8 +55,8 @@ export default function AboutSection() {
         }}
       />
 
-      <h2 className="text-center text-xl text-[#194EFF] mb-4 -mt-6">ABOUT US</h2>
-      <h2 className="text-3xl md:text-4xl font-extrabold text-center leading-snug mb-10 tracking-wide">
+      <h2 className="text-center text-xl md:text-[24px] text-[#194EFF] mb-5 -mt-6">ABOUT US</h2>
+      <h2 className="text-3xl font-gilroy md:text-[44px] font-bold text-center leading-snug mb-16 tracking-wide">
         We Are Digital Agency
       </h2>
 
@@ -70,17 +69,17 @@ export default function AboutSection() {
             className="opacity-80 group-hover:opacity-100 transition duration-500 w-full max-w-lg object-cover"
           />
           <div className="absolute inset-0 flex flex-col -ml-20 -mt-6 justify-center items-center text-6xl font-extrabold bg-transparent rounded-2xl">
-            <span className="md:text-[350px] text-[230px] pt-1 ml-2 font-extrabold bg-gradient-to-tr from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent seven">
+            <span className="md:text-[350px] font-gilroy text-[230px] pt-1 ml-2 font-extrabold bg-gradient-to-tr from-[#00041F] via-[#000730f3] to-[#001676bd] bg-clip-text text-transparent seven">
               7+
             </span>
-            <span className="md:text-4xl text-3xl ml-3 mb-1 font-bold bg-gradient-to-r from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent">
+            <span className="md:text-5xl font-gilroy text-3xl ml-3 md:ml-9 mb-1 font-bold bg-gradient-to-r from-[#00041F] via-[#000730EC] to-[#001676bd] bg-clip-text text-transparent">
               Years Experience
             </span>
           </div>
         </div>
 
         {/* Right: Text */}
-        <div className="space-y-6 bg-transparent">
+        <div className="space-y-6 bg-transparent font-light md:text-lg pr-2">
           <p className="text-gray-300 leading-[36px]">
             At Axinor, we bring together creativity, technology, and strategy to craft
             digital experiences that inspire and deliver measurable results. From

@@ -26,8 +26,8 @@ export default function Works() {
   return (
     <section className="bg-transparent text-white py-20 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
-        <h3 className="text-xl text-[#194EFF] mb-2 ">WORKS</h3>
-        <h1 className="text-4xl font-bold mb-10 tracking-wide">What We've Created</h1>
+        <h3 className="text-xl text-[#194EFF] md:text-[26px] mb-10 tracking-wide ">Works</h3>
+        <h1 className="text-4xl md:text-[44px] font-gilroy font-bold mb-8 tracking-wide">What We've Created</h1>
 
         <div className="relative py-28 my-swiper-wrapper overflow-hidden">
           <Swiper
@@ -69,8 +69,8 @@ export default function Works() {
                     className="w-full h-60 md:h-64 lg:h-72 object-cover rounded-3xl p-2"
                   />
                   <div className="p-4 md:p-6 text-left">
-                    <h3 className="text-lg md:text-xl font-gilroy-bold mb-2">{work.title}</h3>
-                    <p className="text-gray-300 text-xs md:text-sm font-gilroy-light">{work.description}</p>
+                    <h3 className="text-lg md:text-[25px] font-bold tracking-wider mb-2">{work.title}</h3>
+                    <p className="text-gray-300 text-xs md:text-[17px] leading-[29px]">{work.description}</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -80,17 +80,18 @@ export default function Works() {
 
           {/* Navigation Buttons */}
           <div className="absolute left-[35%] right-[35%] md:left-[45%] md:right-[45%] bottom-6 flex justify-center items-center gap-6 md:-mt-10 Z-50">
-            <button className="swiper-button-prev border border-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition">
+            <button className="swiper-button-prev border border-blue-700 hover:bg-blue-950 text-white p-3 rounded-full transition">
               <ArrowLeft size={18} />
             </button>
-            <button className="swiper-button-next border border-blue-700 hover:bg-blue-600 text-white p-3 rounded-full transition">
+            <button className="swiper-button-next border border-blue-700 hover:bg-blue-950 text-white p-3 rounded-full transition">
               <ArrowRight size={18} />
             </button>
           </div>
         </div>
 
-        <button className="mt-16 bg-blue-600 hover:bg-blue-500 text-white font-gilroy-bold px-8 py-3 rounded-full flex items-center gap-2 mx-auto transition">
-          Explore More <ArrowRight size={18} />
+        <button className="mt-16 bg-blue-600 hover:bg-blue-500 tracking-wide text-white text-lg px-5 py-3 rounded-full flex items-center gap-6 mx-auto transition">
+          Explore More 
+          <ArrowRight className="bg-white text-blue-600 rounded-full p-1 w-8 h-8 -mr-2" />
         </button>
       </div>
     </section>

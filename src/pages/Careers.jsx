@@ -128,13 +128,13 @@ const Careers = () => {
         style={{ backgroundImage: `url(${topBg})` }}
       ></div>
       <div
-        className="absolute md:bottom-[388px] bottom-1/4 left-0 w-full md:h-1/2 h-1/3 bg-cover object-top opacity-70 my-14"
+        className="absolute md:bottom-[418px] bottom-1/4 left-0 w-full md:h-1/2 h-1/3 bg-cover object-top opacity-70 my-14"
         style={{ backgroundImage: `url(${bottomBg})` }}
       ></div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center">
-        <h1 className="text-[50px] md:text-[100px] font-extrabold mb-20 mt-6">
+        <h1 className="text-[50px] md:text-[130px] font-gilroy font-bold mb-20 mt-6">
           Careers
         </h1>
 
@@ -175,13 +175,13 @@ const Careers = () => {
                 <div>
                   <div className="flex flex-row">
                     <div className="w-1.5 h-[52px] rounded-full bg-[#3564ff] mt-4 -ml-3"></div>
-                    <h3 className="text-[24px] font-semibold mb-4 m-2 pt-3 text-left tracking-wider px-2">
+                    <h3 className="text-[24px] md:text-[26px] font-semibold mb-4 m-2 pt-3 text-left tracking-wider px-2">
                       {job.title}
                     </h3>
                   </div>
 
                   {/* Description limit */}
-                  <p className="text-gray-300 md:text-lg text-base leading-relaxed m-2 font-thin line-clamp-3">
+                  <p className="text-white md:text-lg text-left text-base leading-relaxed tracking-wide m-3 font-thin line-clamp-3">
                     {job.desc}
                   </p>
 
@@ -198,8 +198,8 @@ const Careers = () => {
                   )}
 
                   {/* Posted Date */}
-                  <p className="text-gray-400 text-base md:text-lg ml-2 mt-3">
-                    <span className="font-medium text-gray-300 text-base md:text-lg">
+                  <p className="text-white font-extralight text-base md:text-lg ml-2 mt-3">
+                    <span className="text-white text-base md:text-lg">
                       Posted Date:
                     </span>{" "}
                     {job.date}
@@ -351,21 +351,31 @@ const Careers = () => {
                     placeholder="Upload Resume"
                     className="flex-1 pl-3 py-2 text-sm text-gray-300 bg-transparent outline-none"
                   />
-                  <label className="bg-[#787F98] text-white text-xs px-2.5 py-2.5 cursor-pointer rounded-r-md hover:bg-[#535869] transition">
+                  <label className="bg-[#787F98] text-white text-xs px-2 py-2.5 cursor-pointer rounded-r-md hover:bg-[#535869] transition">
                     Browse Files
                     <input
                       type="file"
+                      accept=".pdf"
                       className="hidden"
                       onChange={(e) => {
                         const fileInput = e.target;
                         const textInput = fileInput.parentElement.previousSibling;
+
                         if (fileInput.files.length > 0) {
-                          textInput.value = fileInput.files[0].name;
+                          const file = fileInput.files[0];
+                          if (file.type !== "application/pdf") {
+                            alert("Only PDF files are allowed!");
+                            fileInput.value = "";
+                            textInput.value = "";
+                            return;
+                          }
+                          textInput.value = file.name;
                         } else {
                           textInput.value = "";
                         }
                       }}
                     />
+
                   </label>
                 </div>
                 <p className="text-[11px] text-[#FFFFFF6E] mt-1">
