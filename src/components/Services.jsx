@@ -50,15 +50,15 @@ export default function Services() {
   // 🌙 Moon movement (visible across sections)
   const moonStyle = {
     position: "fixed",
-    top: "8%", // start higher
+    top: "10%", // start higher
     right: "-45%", // start further right
-    width: "40%",
+    width:"40%",
     transform: `translate(-${scrollProgress * 135}vw, -${scrollProgress * 20}vh) rotate(${scrollProgress * 360}deg)`,
     opacity:
       scrollProgress < 0.1
         ? 0
         : scrollProgress < 1
-        ? Math.min(0.5, scrollProgress + 0.1)
+        ? Math.min(0.6, scrollProgress + 0.05)
         : 0, // fade out gradually after leaving section
     pointerEvents: "none",
     zIndex: 1,
@@ -80,9 +80,9 @@ export default function Services() {
         <img
           src={bImg}
           alt="Bottom Decoration"
-          className="absolute md:bottom-20 bottom-0 left-0 w-[100%] md:w-[75%] object-contain pointer-events-none z-0"
+          className="absolute md:bottom-20 bottom-0 left-0 w-[500%] md:w-[95%] object-contain pointer-events-none z-0"
           style={{
-            transform: "translate(-40%, 60%) rotate(360deg)",
+            transform: "translate(-40%, 60%) rotate(180deg)",
           }}
         />
 
