@@ -27,10 +27,10 @@ export default function AboutSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const moonStyle = {
-    transform: `translate(${scrollProgress * 90}vw, ${scrollProgress * 40}vh) rotate(${scrollProgress * 360}deg)`,
-    opacity: Math.min(scrollProgress * 0.9, 0.7),
-  };
+  // const moonStyle = {
+  //   transform: `translate(${scrollProgress * 90}vw, ${scrollProgress * 40}vh) rotate(${scrollProgress * 360}deg)`,
+  //   opacity: Math.min(scrollProgress * 0.9, 0.7),
+  // };
 
   return (
     <section
@@ -39,12 +39,12 @@ export default function AboutSection() {
       id="About"
     >
       {/* Moon moving based on scroll */}
-      <img
+      {/* <img
         src={moonImage}
         alt="Moon"
         className="absolute md:w-[34%] w-[67%] pointer-events-none z-0 mt-10 -ml-5 overflow-hidden"
         style={moonStyle}
-      />
+      /> */}
 
       {/* Decorative image at bottom-right */}
       <img
