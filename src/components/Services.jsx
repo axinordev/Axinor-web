@@ -58,7 +58,7 @@ export default function Services() {
       scrollProgress < 0.1
         ? 0
         : scrollProgress < 1
-        ? Math.min(0.4, scrollProgress + 0.002)
+        ? Math.min(0.3, scrollProgress + 0.002)
         : 0, // fade out gradually after leaving section
     pointerEvents: "none",
     zIndex: 1,

@@ -6,6 +6,9 @@ import Careers from "./pages/Careers";
 import Portfolio from "./pages/Portfolio";
 import Preloader from "./components/Preloader";
 
+// =============================
+// Animated Routes
+// =============================
 function AnimatedRoutes() {
   const location = useLocation();
 
@@ -19,7 +22,7 @@ function AnimatedRoutes() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Home />
             </motion.div>
@@ -32,7 +35,7 @@ function AnimatedRoutes() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Careers />
             </motion.div>
@@ -45,7 +48,7 @@ function AnimatedRoutes() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             >
               <Portfolio />
             </motion.div>
@@ -56,23 +59,30 @@ function AnimatedRoutes() {
   );
 }
 
-export default function App() {
+// =============================
+// App Component
+// =============================
+function AppContent() {
+  const location = useLocation();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 4000);
-    return () => clearTimeout(timer);
-  }, []);
+    // Show preloader ONLY if we are on home route
+    if (location.pathname === "/") {
+      const timer = setTimeout(() => setLoading(false), 4000);
+      return () => clearTimeout(timer);
+    } else {
+      setLoading(false);
+    }
+  }, [location.pathname]);
 
+  return loading ? <Preloader /> : <AnimatedRoutes />;
+}
+
+export default function App() {
   return (
-    <>
-      {loading ? (
-        <Preloader />
-      ) : (
-        <Router>
-          <AnimatedRoutes />
-        </Router>
-      )}
-    </>
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
